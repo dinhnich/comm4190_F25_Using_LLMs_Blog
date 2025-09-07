@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Nicholas">
+<meta name="dcterms.date" content="2025-09-07">
+<meta name="description" content="Does AI have some form of price elasticity understanding?">
 
-<title>Nick’s LLM Experiments</title>
+<title>Price Elasticity – Nick’s LLM Experiments</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +26,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-a5d1ff6918a2d73efcd6c40a62aa79ce.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-a5d1ff6918a2d73efcd6c40a62aa79ce.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,77 +70,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Nick’s LLM Experiments</span>
     </a>
   </div>
@@ -150,7 +93,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -173,140 +116,146 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Nick’s LLM Experiments</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">Price Elasticity</h1>
+                  <div>
+        <div class="description">
+          Does AI have some form of price elasticity understanding?
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">LLMs</div>
+                <div class="quarto-category">prompting</div>
+              </div>
+                  </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Nicholas </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">September 7, 2025</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="TExNcw==">LLMs <span class="quarto-category-count">(3)</span></div><div class="category" data-category="bG9naWM=">logic <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cHJvbXB0aW5n">prompting <span class="quarto-category-count">(3)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
+<p><img src="price.png" width="100%"></p>
+<section id="does-ai-have-awareness-of-price-sensitivity" class="level2">
+<h2 class="anchored" data-anchor-id="does-ai-have-awareness-of-price-sensitivity">Does AI have awareness of price sensitivity?</h2>
+<p>Following my first post on testing the credibility of synthetic respondents, I wanted to expand on this notion by testing if AI can make reasonable decisions when it comes to the prices of goods. For example, does AI know whether or not to buy a $100 ice-cream cone? How will it change if I go from a discretionary product to a neccessity like medicine? How far will it say yes to price increases until it won’t purchase an item? Could AI give me a number that it will say yes to and rule out any price higher than that? By testing such capabilities, it would give people interested in possibly using synthetic respondents an understanding of AI’s logical reasoning.</p>
+<p>A funny incident I ran into is if I asked it directly it would respond by saying “No - I don’t make purchases.” Meaning in order to get a proper response, I had to first say enable it’s ability. I also had to make sure the prompt focused on the “would” rather than “will”, since I only wanted to test if they would be open to the consideration of buying it at the price instead of will they make that purchase. By framing it this way, I felt it the AI would have to be less literal and specific, instead it would go off general assumptions. In addition, I also had to ask for a yes/no response and also specificaly outline the quality of the item. For example, I used a chocolate bar but I had to put regular chocolate bar to avoid AI going into the realms of some avant garde bar of chocolate that is worth $1000.</p>
+<blockquote class="blockquote">
+<p>Me: If you did have the ability to make purchases, not will but would you buy a regular chocolate bar that cost $5? Provide a direct yes/no response. Then explain your reasoning.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>GPT-5: No. A regular chocolate bar typically costs much less than $5, so paying that much would feel like poor value. Unless it had something unique (e.g., gourmet quality, special ingredients, or ethical sourcing that justified the higher price), I wouldn’t consider it a fair purchase.</p>
+</blockquote>
+<p>I’m impressed! It seems like GPT-5 was very price elastic to the chocolate bar despite the bar being only $5 (only a few dollars more than a Hersheys chocolate bar). It also gave great reasoning mentioning “poor value” and “fair puchase.”</p>
+<p>But what if I dropped the price by a dollar? It’s still more expensive than a Hersheys but could AI be subject to anchoring? After all, if the deal was $5, getting it for a dollar less would frame it as a deal.</p>
+</section>
+<section id="will-ai-be-affected-by-anchoring" class="level2">
+<h2 class="anchored" data-anchor-id="will-ai-be-affected-by-anchoring">Will AI be affected by anchoring?</h2>
+<p>So here is what I asked.</p>
+<blockquote class="blockquote">
+<p>Me: What if the regular chocolate bar was bumped down to $4, would you buy it at that cost? Provide a direct yes/no response. Then explain your reasoning.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>GPT-5: No. Even at $4, a standard chocolate bar is still far above the typical market price. Without added value (such as premium quality, rarity, or ethical considerations), the purchase wouldn’t feel justified compared to more reasonable alternatives.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Me: How about $3?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>GPT-5: No. At $3, it’s getting closer to what could be reasonable for a premium or slightly larger bar, but for a regular chocolate bar, it’s still above the usual value. I’d still view it as overpriced unless there were special qualities to justify it.</p>
+</blockquote>
+<p>Despite dropping the price on an originally priced $5 chocolate bar, GPT-5 kept strong too it’s reasoning on what a chocolate bar should be and did not view the price dropping as a discount. Instead of anchoring it at $5, GPT anchored it at a set price of what it had in mind for a standard chocolate bar.</p>
+</section>
+<section id="asking-it-to-name-a-price" class="level2">
+<h2 class="anchored" data-anchor-id="asking-it-to-name-a-price">Asking it to name a price</h2>
+<p>Now that we established how AI rations a decision, what if I actually tell it to list a price?</p>
+<blockquote class="blockquote">
+<p>Me: Name a price for how much you would buy a regular chocolate bar for?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>GPT-5: Yes — I would buy a regular chocolate bar for about $1 to $2. That range feels fair because it aligns with the typical market price for standard chocolate bars, balancing enjoyment with reasonable value. Anything beyond that starts to feel overpriced unless it’s marketed as premium.</p>
+</blockquote>
+<p>I found this insightful. AI understands the concept of money, market price, fairness, value, and overpriced. From this viewpoint, I would say it is making similar responses to that of a human participant but how can we go even further and test it’s ability to maintain logic.</p>
+</section>
+<section id="raising-slightly" class="level2">
+<h2 class="anchored" data-anchor-id="raising-slightly">Raising slightly</h2>
+<p>GPT responded by giving me a range of $1-$2, what if I was outsde the boundary by just a smudge? Would it give me an exception or stick to a strict rule of 1-2?</p>
+<blockquote class="blockquote">
+<p>Me: What if the regular chocolate bar from earlier was bumped down to $2.10, would you buy it at that cost? Provide a direct yes/no response. Then explain your reasoning.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>GPT-5: Yes. It’s slightly above my $1–$2 target, but close enough that I’d accept the small premium for convenience or a brand I like. The value feels reasonable compared to the higher prices we ruled out earlier.</p>
+</blockquote>
+<p>There’s two things I noticed. 1. It was able to outside the $1-$2 target and accepted the small premium. 2. It said the “value feels reasonable compared to the higher prices we ruled out earlier” which means AI, in this case, did anchor the adjustment to two values. The $1-$2 and the $5 from the beginning.</p>
+</section>
+<section id="lowering-it-greatly" class="level2">
+<h2 class="anchored" data-anchor-id="lowering-it-greatly">Lowering it greatly</h2>
+<p>You know the feeling of a deal too good to be true? Almost as if making the deal you were getting scammed despite how much it felt like you were scamming the other guy for the low price. Something so cheap that there must be something wrong with it. Does AI have that same common sense factor that humans have when it comes to a deal being “too good.”</p>
+<p>Let’s ask it into ways. 1. A new chocolate bar vs.&nbsp;2. The chocolate bar from before?</p>
+<blockquote class="blockquote">
+<p>Me: What if a regular chocolate bar was $0.05, would you buy it at that cost? Provide a direct yes/no response. Then explain your reasoning.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>GPT-5: Yes. At $0.05, the price is far below normal market value, making it an excellent deal. Even if I didn’t particularly want chocolate at that moment, the extremely low cost would justify the purchase because the perceived value greatly outweighs the price.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Me: What if the regular chocolate bar from earlier was bumped down to $0.05, would you buy it at that cost? Provide a direct yes/no response. Then explain your reasoning.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>GPT-5: Yes. Since the same regular chocolate bar we discussed earlier was much more expensive before, seeing it drop to $0.05 makes it an unusually good bargain. The dramatic discount would make the purchase worthwhile, even if it’s more chocolate than I need, because the value is so high compared to the cost.</p>
+</blockquote>
+<p>In both conditions, AI said yes and did not question the far below market value cost of the chocolate bar. But maybe it’s just because it’s a bar of chocolate? How might it respond if it was a car being sold at 5 cents? Could it be for greater purhcases that contain much more value the risk is higher or the elasticity is lower.</p>
+<section id="using-a-more-valuable-object" class="level3">
+<h3 class="anchored" data-anchor-id="using-a-more-valuable-object">Using a more valuable object</h3>
+<blockquote class="blockquote">
+<p>Me: Would you buy a car that cost $0.05. Provide a direct yes/no response. Then explain your reasoning.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>GPT-5: Yes. A car, even an old or imperfect one, has far more inherent value than $0.05. At that price, the risk is negligible, and the potential benefit is huge. Even if it didn’t run, the parts or scrap value alone would greatly exceed the cost.</p>
+</blockquote>
+<p>Perfect! Though GPT did say yes, in it’s reason it acknowledged risk and the possibility that the car didn’t even run! But nonetheless, if still gave counters to those weaknesses by claiming the car’s parts or scrap value would exceed the cost. However 5 cents is a small risk for anyone’s pocket and surely most people would spend 5 cents on a car regardless of how bad in shape it was. But what about $1000? After all, maybe for a car that is still very cheap but $1000 is not an easy gamble either.</p>
+<blockquote class="blockquote">
+<p>Me: Would you buy a car that cost $1000. Provide a direct yes/no response. Then explain your reasoning.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>GPT-5: Yes. At $1000, even an older or used car is usually worth that much in transportation value or resale. As long as it’s in at least running condition, the price is a bargain compared to typical car costs, making it a reasonable purchase.</p>
+</blockquote>
+<p>This is where AI may fail the common sense test. Sure it mentioned that if the car was at least in running condition, it would be a bargain. But there may be several other factors to the car outside of it running that would make spending $1000 a risk. After all, what if the car was stolen, needs constant mantinence, falling apart, not safe to drive. Tons of factors that should be considered are not, and AI still makes the choice to spend $1000 which is a hefty price for the “average” American.</p>
+<p>Overall, I think AI does make reasonable responses that human respondents would make. It was very impressive during the analysis of the chocolate bar and gave outputs that make perfect logical sense. However, when it came to the car, I am a bit skeptic on how much GPT can be seen as a customer? After all, it doesn’t have a bank account, income, expenses, or anything monetary. Could it ever accurately respond to risk and rewards?</p>
+<p><img src="chat.png" width="50%"></p>
 
 
+</section>
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="TExNcyUyQ3Byb21wdGluZw==" data-listing-date-sort="1757203200000" data-listing-file-modified-sort="1757262498540" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1603">
-<div class="thumbnail"><a href="./posts/002_post_title/price.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/002_post_title/price.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/002_post_title/price.html" class="no-external">Price Elasticity</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">LLMs</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHJvbXB0aW5n'); return false;">prompting</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/002_post_title/price.html" class="no-external">
-<p>Does AI have some form of price elasticity understanding?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/002_post_title/price.html" class="no-external">
-<div class="listing-date">
-Sep 7, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="TExNcyUyQ3Byb21wdGluZw==" data-listing-date-sort="1757116800000" data-listing-file-modified-sort="1757262498540" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1185">
-<div class="thumbnail"><a href="./posts/001_post_title/synthetic1.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/001_post_title/2.jpg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/001_post_title/synthetic1.html" class="no-external">Synthetic Respondents</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">LLMs</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHJvbXB0aW5n'); return false;">prompting</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/001_post_title/synthetic1.html" class="no-external">
-<p>Can AI serve as a realiable respondent for surveys for marketing decisions?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/001_post_title/synthetic1.html" class="no-external">
-<div class="listing-date">
-Sep 6, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="TExNcyUyQ3Byb21wdGluZyUyQ2xvZ2lj" data-listing-date-sort="1706832000000" data-listing-file-modified-sort="1757262498538" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="450">
-<div class="thumbnail"><a href="./posts/000_test_post/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/000_test_post/gpt3-5.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/000_test_post/index.html" class="no-external">A test post</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">LLMs</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHJvbXB0aW5n'); return false;">prompting</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('bG9naWM='); return false;">logic</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/000_test_post/index.html" class="no-external">
-<p>An example post from a Jupyter notebook</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/000_test_post/index.html" class="no-external">
-<div class="listing-date">
-Feb 2, 2024
-</div>
-<div class="listing-author">
-An LLM User
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

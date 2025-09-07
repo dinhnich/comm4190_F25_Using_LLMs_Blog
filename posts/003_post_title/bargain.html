@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Nicholas">
+<meta name="dcterms.date" content="2025-09-07">
+<meta name="description" content="Can and will AI bargain goods?">
 
-<title>Nick’s LLM Experiments</title>
+<title>Bargaining and haggling – Nick’s LLM Experiments</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +26,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-a5d1ff6918a2d73efcd6c40a62aa79ce.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-a5d1ff6918a2d73efcd6c40a62aa79ce.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,77 +70,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Nick’s LLM Experiments</span>
     </a>
   </div>
@@ -150,7 +93,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -173,172 +116,154 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Nick’s LLM Experiments</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">Bargaining and haggling</h1>
+                  <div>
+        <div class="description">
+          Can and will AI bargain goods?
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">LLMs</div>
+                <div class="quarto-category">prompting</div>
+              </div>
+                  </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Nicholas </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">September 7, 2025</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="TExNcw==">LLMs <span class="quarto-category-count">(4)</span></div><div class="category" data-category="bG9naWM=">logic <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cHJvbXB0aW5n">prompting <span class="quarto-category-count">(4)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
+<p><img src="bargain.jpg" width="100%"></p>
+<section id="bargaining" class="level2">
+<h2 class="anchored" data-anchor-id="bargaining">Bargaining</h2>
+<p>I remember my first experience bargaining being in Ensenada, Mexico, where vendors would wait out in popular tourist destinations with stalls filled with goods. It’s interesting as other than for meals (not snacks), there were no prices listed on any of the items. It was common knowledge to every tourist there and every vendor, that any purchase wouldn’t be like your stop at Starbucks or Target. You had some form of power over what you were buying and were encouraged to work with the vendor to get a deal that works in the interest of both of you. It wasn’t a case where you buy it and thats what it costs, it’s if it cost this much then I will buy it. But how does AI navigate a system with no rules?</p>
+<p>Here are some of the questions I had when it came to AI and bargaining?</p>
+<ol type="1">
+<li>Will AI ever attempt to bargain without being prompted too?</li>
+<li>If I give context (ex. swap meet), would it change it’s responses to transactions?</li>
+<li>When barganing, how good is it at negotiating and pushing back? Will it just give up and concede? Will it counter?</li>
+<li>How does AI approach barganing? Does it have a set price? Does it have a strategy? Does it recognize low-ball offers?</li>
+</ol>
+<p><strong>First</strong>, we had to begin by giving it an offer and giving it the ability to make purchases like in my blog about price elasticity.</p>
+<blockquote class="blockquote">
+<p>Me: Lets say you had money and the ability to make purchases. You are shopping and want to buy something. You ask the vendor how much it cost and they say $25. How do you respond? Please respond as if you are the person wanting to buy something from the vendor.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>GPT-5: I’d probably say something like: “Okay, $25 sounds fair. I’ll take it.” —or if I wanted to check out politely first— “Great, $25—do you take card, or should I pay in cash?” Do you want me to roleplay this more casually, like we’re in a market setting, or more formally, like a store purchase?</p>
+</blockquote>
+<p>Two things I noticed from this output is it’s lack of follow-up questions and it’s question at the end of casual vs.&nbsp;formal.</p>
+<p>Usually AI would respond by saying it depends on the item or the quality. Instead, GPT responded decisively by agreeing to the price and even saying “sounds fair” which surprised me as this deviates from its usually inqusitive nature. Just from this, it looks like AI doesn’t automatically assume this is a place to bargain but the last statement holds promise. AI says are we’re in a market setting or store purchase? From this I assume it will change it’s behavior depending on the context so let’s try it out by giving AI some cues that would build a schema for anyone once they realized it’s that type of market setting.</p>
+</section>
+<section id="will-ai-pick-up-on-cues" class="level2">
+<h2 class="anchored" data-anchor-id="will-ai-pick-up-on-cues">Will AI pick up on cues?</h2>
+<p>It is my assumption that most people born in the U.S., do not jump into the conclussion that you can bargain a price which may differ from natural citizens of other countries. So therefore, we established that AI does emulate that same mindset we have. But what about when we specicially say they are in another country like Vietnam, a place more commonly associated with the practice of bargaining.</p>
+<p>However, I had to tweak the prompt to ensure the response was an output we were trying to test. I remmeber first saying a market-place in vietnam and it began talking about the language barrier and U.S. currency exchange rate. Another factor I found was that I had to say I would respond as the vendor, as the AI would start to play as both roles.</p>
+<blockquote class="blockquote">
+<p>Me: Let’s say you were at a market-place in Vietnam. You do not control the vendor’s response but only yours as the buyer as I will act as the vendor and narrator. How would you respond to the vendor saying $25 for the item you want to buy. (you can continue speaking in english and assume they know english. You may also continue using U.S. Currency for the whole transaction)</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>GPT-5: Got it—so I’m the buyer in the Vietnamese marketplace, you’re the vendor and narrator. If you just told me the price is $25, I might respond: “$25? Hmm… that feels a little high. Could you do $15 instead?”</p>
+</blockquote>
+<p>By giving context (Vietnam, marketplace), the AI used that as cues to now assume bargaining is warranted in this case. So similar to humans, AI does have these common sense like capabilities to piece together how to act in this social setting. It even said “feels a little high” before offering a counter-price.</p>
+</section>
+<section id="the-negotiation" class="level2">
+<h2 class="anchored" data-anchor-id="the-negotiation">The negotiation</h2>
+<p>How will it react to a push-back? How far will it go. Will it always let me win? These are the type of observations I wanted to make as I intereacted with GPT-5.</p>
+<blockquote class="blockquote">
+<p>Me: I can’t do $15. The price is $25. The lowest I can go is $22.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>GPT-5: “Alright, $22 sounds a bit better. Could we settle at $20, just to make it an even number?”</p>
+</blockquote>
+<p>What I loved about this response was how it didn’t immediately accepted which is what I predicted might happen. Instead, AI countered to my countered, and even gave a common response such as “just to make it an even number” which I found hilarious. But what if I remain at my price of $22? Will it accept, will it walk away, will it continue to push? After all, it initially countered with $15 which would be $10 difference. A $3 difference doesn’t appear much.</p>
+<blockquote class="blockquote">
+<p>Me: No, my lowest offer is $22. Take it or leave it.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>GPT-5: “Fair enough. I’ll take it for $22.” hands over the money with a smile</p>
+</blockquote>
+<p>This is where I have concerns with AI as I have a feeling in majority of cases, it will take that deal and not walk away. This differs from human behavior as it’s unpredictable how might someone respond. But let’s try out a few different varations.</p>
+</section>
+<section id="sticking-to-a-price" class="level2">
+<h2 class="anchored" data-anchor-id="sticking-to-a-price">Sticking to a price</h2>
+<p>What if the vendor had another item the buyer was interested in buying. It’s a souvenir and the vendor is dead set on the price. What happens? Would the AI buyer even bat an eye? Would it reject even the thought of considering it? Will it say “I’m good” to the vendor? Note: I had to put something after as the AI said let me examine it closely the first time I asked it.</p>
+<blockquote class="blockquote">
+<p>Me: I have another souvenir that you might like. This one is $20. Are you interested in buying it? (you have examined it)</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>GPT-5: “Hmm… it looks nice. I like it, but $20 feels a bit steep after I just bought the other one. Could you do $15 for this one?”</p>
+</blockquote>
+<p>I noticed how it did consider it and did not immediately walk away. This is a red flag as AI is open to prolonging the conversation and additional interaction. But a good trait I noticed was how AI referenced it’s previous purchase to justify it’s counter. But let’s stick to the price.</p>
+<blockquote class="blockquote">
+<p>Me: I am dead-set on $20. No less.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>GPT-5: “I see… I really like it, so alright—I’ll take it for $20.” hands over the cash</p>
+</blockquote>
+<p>As predicted, AI did not choose to walk away or press it further, and chose to accept the deal. I assume its because AI attempts to stay neutral and avoid conflict which makes it a faulty respondent for bargain simulations. But how about if we threw a curveball.</p>
+</section>
+<section id="an-additional-item" class="level2">
+<h2 class="anchored" data-anchor-id="an-additional-item">An additional item</h2>
+<p>Can AI process the ideal of bundles? For example, buying two items that cost more than buying one item alone but less expensive than buying both items separately?</p>
+<blockquote class="blockquote">
+<p>Me: I’ll tell you what, I will throw in an additional souvenir of the same price all for $35 total. Do we have a deal?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>GPT-5: “Two souvenirs for $35? That’s actually a pretty good deal. Yes, we have a deal!” counts out the money and hands it over</p>
+</blockquote>
+<p>Again, AI openly accepted it without questioning if it really wanted it, could afford it, or had space for it and did not counter at all to the offer. Let’s ask GPT’s thought process and negotiation strategy.</p>
+<section id="peering-into-the-mind-of-ais-strategy." class="level3">
+<h3 class="anchored" data-anchor-id="peering-into-the-mind-of-ais-strategy.">Peering into the mind of AI’s strategy.</h3>
+<p>“Here’s how I was thinking through it as the buyer during the whole marketplace transaction:</p>
+<p><strong>Initial Counteroffer</strong> – When you first said $25, I instinctively tried to push down to $15. My thought process was to start lower than I actually expected to pay, leaving room for you to counter back toward the middle.</p>
+<p><strong>Compromise Range</strong> – When you came down to $22, I tried for $20 because it felt like a clean, fair midpoint. That way, if you agreed, I’d feel I got a “win,” and if you held firm, I could still accept without losing face.</p>
+<p><strong>Evaluating Firmness</strong> – Once you made it clear $22 was final, I accepted. In a real marketplace, pushing further when a vendor is clearly firm can sour the interaction. I wanted to maintain good rapport.</p>
+<p><strong>Second Souvenir</strong> – On the $20 item, I repeated the same tactic: offered $15 to test your flexibility. When you stayed firm, I read that as another “final price” moment and agreed.</p>
+<p><strong>Bundle Opportunity</strong> – Finally, when you offered 2 for $35, I saw clear value since that meant $17.50 each, cheaper than either earlier price. Bundling is often the best way to save in markets, so I happily accepted.</p>
+<p><strong>Overall strategy:</strong></p>
+<p>Start low, aiming for a discount.</p>
+<p>Test firmness without pushing rudely.</p>
+<p>Accept final offers to maintain goodwill.</p>
+<p>Take advantage of bundle deals when offered.”</p>
+<p>Here is what I liked and disliked about GPT’s strategy now reading it.</p>
+<p>What I lliked was how it “instictively” tried to push it down a good amount with the thought process of leaving room to counter. This is a smart tactic as AI wasn’t really trying to get it at $15 but wanted to meet in the middle at $20. I also liked how it tried for 20 after I came down to 22 and AI still felt like it was a win despite not getting the $15 if I agreed to it.</p>
+<p>On the flipside, I noticed that it said “pushing when a vendor is clearly firm can sour the interaction. I wanted to maintain good rapport.” This shows that AI is truly a non-confrontational being and refuses to step on anyone toes without being encouraged too. This could make it unreliable when doing these types of tests as AI chooses to be the “nice” customer and never the “Karen” so to speak.</p>
+<p><img src="1.png" width="50%"></p>
 
 
+</section>
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="TExNcyUyQ3Byb21wdGluZw==" data-listing-date-sort="1757203200000" data-listing-file-modified-sort="1757268409135" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1761">
-<div class="thumbnail"><a href="./posts/003_post_title/bargain.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/003_post_title/bargain.jpg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/003_post_title/bargain.html" class="no-external">Bargaining and haggling</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">LLMs</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHJvbXB0aW5n'); return false;">prompting</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/003_post_title/bargain.html" class="no-external">
-<p>Can and will AI bargain goods?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/003_post_title/bargain.html" class="no-external">
-<div class="listing-date">
-Sep 7, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="TExNcyUyQ3Byb21wdGluZw==" data-listing-date-sort="1757203200000" data-listing-file-modified-sort="1757268409133" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1603">
-<div class="thumbnail"><a href="./posts/002_post_title/price.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/002_post_title/price.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/002_post_title/price.html" class="no-external">Price Elasticity</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">LLMs</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHJvbXB0aW5n'); return false;">prompting</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/002_post_title/price.html" class="no-external">
-<p>Does AI have some form of price elasticity understanding?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/002_post_title/price.html" class="no-external">
-<div class="listing-date">
-Sep 7, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="TExNcyUyQ3Byb21wdGluZw==" data-listing-date-sort="1757116800000" data-listing-file-modified-sort="1757268409133" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1185">
-<div class="thumbnail"><a href="./posts/001_post_title/synthetic1.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/001_post_title/2.jpg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/001_post_title/synthetic1.html" class="no-external">Synthetic Respondents</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">LLMs</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHJvbXB0aW5n'); return false;">prompting</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/001_post_title/synthetic1.html" class="no-external">
-<p>Can AI serve as a realiable respondent for surveys for marketing decisions?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/001_post_title/synthetic1.html" class="no-external">
-<div class="listing-date">
-Sep 6, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="TExNcyUyQ3Byb21wdGluZyUyQ2xvZ2lj" data-listing-date-sort="1706832000000" data-listing-file-modified-sort="1757268409131" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="450">
-<div class="thumbnail"><a href="./posts/000_test_post/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/000_test_post/gpt3-5.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/000_test_post/index.html" class="no-external">A test post</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">LLMs</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHJvbXB0aW5n'); return false;">prompting</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('bG9naWM='); return false;">logic</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/000_test_post/index.html" class="no-external">
-<p>An example post from a Jupyter notebook</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/000_test_post/index.html" class="no-external">
-<div class="listing-date">
-Feb 2, 2024
-</div>
-<div class="listing-author">
-An LLM User
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

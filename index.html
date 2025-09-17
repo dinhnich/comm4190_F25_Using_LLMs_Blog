@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -34,14 +34,15 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-a5d1ff6918a2d73efcd6c40a62aa79ce.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-2ceb22b53773876b76da397856803851.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -113,7 +114,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -139,6 +140,8 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Nick’s LLM Experiments</span>
     </a>
@@ -152,16 +155,6 @@ window.Quarto = {
   <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com"> <i class="bi bi-twitter" role="img">
-</i> 
-<span class="menu-text"></span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -192,7 +185,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="TExNcw==">LLMs <span class="quarto-category-count">(4)</span></div><div class="category" data-category="bG9naWM=">logic <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cHJvbXB0aW5n">prompting <span class="quarto-category-count">(4)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="TWFya2V0aW5n">Marketing <span class="quarto-category-count">(3)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -206,7 +199,7 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="TExNcyUyQ3Byb21wdGluZw==" data-listing-date-sort="1757203200000" data-listing-file-modified-sort="1757268495701" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1761">
+<div class="quarto-post image-right" data-index="0" data-categories="TWFya2V0aW5n" data-listing-date-sort="1757203200000" data-listing-file-modified-sort="1758145947651" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1761">
 <div class="thumbnail"><a href="./posts/003_post_title/bargain.html" class="no-external">
 
 <p class="card-img-top"><img src="posts/003_post_title/bargain.jpg"  class="thumbnail-image card-img"/></p>
@@ -218,9 +211,7 @@ window.Quarto = {
 </h3>
 <div class="listing-categories">
 
-<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">LLMs</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHJvbXB0aW5n'); return false;">prompting</div>
+<div class="listing-category" onclick="window.quartoListingCategory('TWFya2V0aW5n'); return false;">Marketing</div>
 
 </div>
 <div class="delink listing-description"><a href="./posts/003_post_title/bargain.html" class="no-external">
@@ -238,7 +229,7 @@ Nicholas
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="TExNcyUyQ3Byb21wdGluZw==" data-listing-date-sort="1757203200000" data-listing-file-modified-sort="1757268495699" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1603">
+<div class="quarto-post image-right" data-index="1" data-categories="TWFya2V0aW5n" data-listing-date-sort="1757203200000" data-listing-file-modified-sort="1758145947649" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1603">
 <div class="thumbnail"><a href="./posts/002_post_title/price.html" class="no-external">
 
 <p class="card-img-top"><img src="posts/002_post_title/price.png"  class="thumbnail-image card-img"/></p>
@@ -250,9 +241,7 @@ Nicholas
 </h3>
 <div class="listing-categories">
 
-<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">LLMs</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHJvbXB0aW5n'); return false;">prompting</div>
+<div class="listing-category" onclick="window.quartoListingCategory('TWFya2V0aW5n'); return false;">Marketing</div>
 
 </div>
 <div class="delink listing-description"><a href="./posts/002_post_title/price.html" class="no-external">
@@ -270,7 +259,7 @@ Nicholas
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="TExNcyUyQ3Byb21wdGluZw==" data-listing-date-sort="1757116800000" data-listing-file-modified-sort="1757268495698" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1185">
+<div class="quarto-post image-right" data-index="2" data-categories="TWFya2V0aW5n" data-listing-date-sort="1757116800000" data-listing-file-modified-sort="1758145947648" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1185">
 <div class="thumbnail"><a href="./posts/001_post_title/synthetic1.html" class="no-external">
 
 <p class="card-img-top"><img src="posts/001_post_title/2.jpg"  class="thumbnail-image card-img"/></p>
@@ -282,9 +271,7 @@ Nicholas
 </h3>
 <div class="listing-categories">
 
-<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">LLMs</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHJvbXB0aW5n'); return false;">prompting</div>
+<div class="listing-category" onclick="window.quartoListingCategory('TWFya2V0aW5n'); return false;">Marketing</div>
 
 </div>
 <div class="delink listing-description"><a href="./posts/001_post_title/synthetic1.html" class="no-external">
@@ -302,7 +289,7 @@ Nicholas
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="TExNcyUyQ3Byb21wdGluZyUyQ2xvZ2lj" data-listing-date-sort="1706832000000" data-listing-file-modified-sort="1757268495697" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="450">
+<div class="quarto-post image-right" data-index="3" data-listing-date-sort="1706832000000" data-listing-file-modified-sort="1758145947646" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="450">
 <div class="thumbnail"><a href="./posts/000_test_post/index.html" class="no-external">
 
 <p class="card-img-top"><img src="posts/000_test_post/gpt3-5.png"  class="thumbnail-image card-img"/></p>
@@ -312,15 +299,6 @@ Nicholas
 <h3 class="no-anchor listing-title">
 <a href="./posts/000_test_post/index.html" class="no-external">A test post</a>
 </h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">LLMs</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('cHJvbXB0aW5n'); return false;">prompting</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('bG9naWM='); return false;">logic</div>
-
-</div>
 <div class="delink listing-description"><a href="./posts/000_test_post/index.html" class="no-external">
 <p>An example post from a Jupyter notebook</p>
 </a></div>
@@ -390,13 +368,14 @@ An LLM User
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

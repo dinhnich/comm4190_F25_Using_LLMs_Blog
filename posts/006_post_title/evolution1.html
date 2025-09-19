@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Nicholas">
+<meta name="dcterms.date" content="2025-09-19">
+<meta name="description" content="What is common sense and is it uniquely to Humans or does AI have it too?">
 
-<title>Nick’s LLM Experiments</title>
+<title>Does AI have common sense? – Nick’s LLM Experiments</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +26,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-2ceb22b53773876b76da397856803851.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-2ceb22b53773876b76da397856803851.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,79 +71,21 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Nick’s LLM Experiments</span>
     </a>
   </div>
@@ -153,7 +96,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -166,247 +109,134 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Nick’s LLM Experiments</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">Does AI have common sense?</h1>
+                  <div>
+        <div class="description">
+          What is common sense and is it uniquely to Humans or does AI have it too?
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Common Sense</div>
+              </div>
+                  </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Nicholas </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">September 19, 2025</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(7)</span></div><div class="category" data-category="Q29tbW9uJTIwU2Vuc2U=">Common Sense <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RXZvbHV0aW9u">Evolution <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TGl2aW5nJTIwd2l0aCUyMGElMjBCb29r">Living with a Book <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TWFya2V0aW5n">Marketing <span class="quarto-category-count">(3)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
+<p><img src="cs1.jpg" width="100%"></p>
+<section id="what-is-common-sense" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-common-sense">What is common sense?</h2>
+<p>There have been numerous definitions of common sense over the years.</p>
+<p>Aristotle’s koinè aisthèsis, where humans relied on the 5 senses to perceive “common sensibles” like size and objects, to scholastic thinkers like Avicenna, who claimed common sense to be “internal senses”, to common sense being seen as the judge and censor of the mind. However, Locke helped shift away from common sense as a faculty, and common sense began to mean two things: (1) everyday reasoning capacity (ability to distinguish), and (2) the shared beliefs of a community.</p>
+<p>Later, this meaning would give common sense a political purpose in London after 1688. The Toleration Act and the end of the Licensing Act created an environment that fostered differing views. Fear over factionalism led to common sense and politeness being promoted as a means to create cohesion. This idea of a minimal baseline of shared truths anchoring societies and avoiding sectarianism was promoted by writers like Addison and religious sermons.</p>
+<p>Yet now, I prefer to use an approach talked about by my professor Duncan Watts and his research into common sense. Rather than treating common sense as an assumed concept, he and his colleagye proposed a framework that defines it in terms of agreement (do people generally say the same thing about a claim) and awareness (do people correctly predict that others will agree).</p>
+<p>But, I am curious to see how AI defines common sense? Is common sense only possible between living organisms? Even more so, is this beleif only possible between humans? Let’s first ask AI to define common sense for us.</p>
+<blockquote class="blockquote">
+<p>Me: What is common sense?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>GPT-5: “Common sense” usually refers to the basic ability to perceive, understand, and judge things in a simple, practical way that is generally shared by most people without the need for specialized knowledge. In other words, it’s the kind of reasoning or intuition that seems “obvious” or “reasonable” to the average person in everyday situations. For example: 1. Knowing not to touch a hot stove. 2. Looking both ways before crossing the street. 3. Understanding that if it’s raining, you might need an umbrella. Philosophers sometimes point out that what counts as “common sense” can vary across cultures, communities, and time periods—it isn’t always universal.</p>
+</blockquote>
+<p>It appears that AI does agree with the idea idea of common sense primarily being an agreement. I love the examples of “Knowing not to touch a hot stove” as an example of common sense.</p>
+<p>Now that we established a baseline for awareness of common sense, let’s ask if it thinks AI has common sense.</p>
+<blockquote class="blockquote">
+<p>Me: Do you think you have common sense?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>GPT-5: <strong>Short answer: kinda — but not like a human.</strong> <strong>Longer:</strong> I have statistical common sense learned from patterns in huge amounts of text. That means I can often make everyday inferences (e.g., if someone says “I spilled coffee,” I can infer they might be annoyed, need a napkin, or have a stained shirt). I can also follow practical rules (don’t touch a hot stove, bring an umbrella in the rain) and reason through many ordinary problems. <strong>Where I’m strong</strong> Pattern-based inferences that show up often in text. Predicting plausible everyday consequences and giving practical advice. Combining facts and simple causal reasoning to solve routine tasks. <strong>Where I’m weak</strong> I don’t have real-world senses or embodied experience, so I can miss things humans learn by doing (e.g., subtle timing, balance, tactile cues). I can be overconfident about things I “hallucinate” (presenting plausible but false specifics). I can fail on uncommon edge cases, culturally specific norms, or when physical context matters. I don’t form intentions, feelings, or personal habits — I only simulate them from text.</p>
+</blockquote>
+<p>I find it fascinating that it knows things like someone may be annoyed by spilling coffee and to bring an umbrella in the rain despite, as it said, not having emobodied experience. So AI gathers its common sense off data but what happens when I ask it questions that you can’t pull from the web?</p>
+<p>Its easy to have common sense to commonly heard phrases. We know not to touch a hot stove. But what happens when claims start to become more complex and we can’t rely on “norms” to help answer where it’s common sense or not.</p>
+<p>But before we do that, let’s first ask if AI thinks common sense is unqiue to humans or can it be seen in other organisms?</p>
+</section>
+<section id="is-common-sense-unique-to-humans" class="level2">
+<h2 class="anchored" data-anchor-id="is-common-sense-unique-to-humans">Is common sense unique to humans?</h2>
+<p>In my opinion, animals must have some form of common sense yet it’s hard to measure. For example, the term insticts as a lot in common with common sense. According to google, instincts are “natural, unlearned behaviors or complex responses to environmental stimuli that are common to all members of a species and serve purposes like survival or reproduction.” I think a claim can be instinctual and therefore common sense. Yet when do they differ? Does dog knowing not to avoid speeding cars an instinct? I would say yes. But does a dog know it’s different than their owners and their needs are different? It’s not so much important to survival so is it just pure common sense?</p>
+<blockquote class="blockquote">
+<p>Me: Is common sense unique to humans?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>GPT-5: <strong>1. In humans</strong> Common sense usually means a mix of shared knowledge, intuitive reasoning, and cultural norms. It’s partly biological (basic survival instincts, like avoiding fire), and partly social (knowing that it’s rude to interrupt). <strong>2. In non-human animals</strong> Many animals show practical survival sense — e.g., birds migrating, squirrels storing food, or dogs avoiding danger. But this tends to be instinct or learned behavior, not the reflective, general-purpose reasoning we call “common sense” in humans. <strong>3. In machines (like me!)</strong> AI can simulate a kind of “text-trained” common sense, but it lacks embodied experience, instincts, and cultural grounding. For example, I can say “Don’t put metal in a microwave” because I’ve seen it in training data, but I don’t feel the danger or discover it by trial and error.</p>
+</blockquote>
+<p>GPT divides it into 3 categories. Humans, animals, and machines. As expected it mentioned instincts when mentioning common sense. But for machimes, they don’t have instinct. Instead it uses training data but can’t necessarily prove the claims of common sense unlike organisms. On the flip side, humans do have common sense that is reflective that animals at least in behavior, do not seem to have. We both share those instincts that guide our survival, but we know not to blast music in a library while I’m not sure if dogs know not to bark in the same setting.</p>
+<p>We can’t test animals very well but we can put machines to the test. AI claims it’s common sense comes from training data but let’s see when data doesn’t give a clear cut answer. Using a quiz from Watts’ lab, “This project seeks to quantify common sense empirically via a massive online survey experiment. Participants will read a series of”claims” about the physical and social world (e.g.&nbsp;“Dropped pebbles fall to the ground” or “Fully automatic assault rifles should be banned”), state whether they agree with each claim, and also state what they think most other people think.”</p>
+</section>
+<section id="ai-takes-a-test" class="level2">
+<h2 class="anchored" data-anchor-id="ai-takes-a-test">AI takes a test</h2>
+<p>Linked is the test I am referring to: https://commonsense.seas.upenn.edu/</p>
+<p>Here’s a sample question</p>
+<p><img src="2201.png" width="50%"></p>
+<p>As you can see, this statement is much less factual than knowing not to touch a hot stove. So let’s see how AI does.</p>
+<p>To do this, I will upload a picture of each question and respond by the choices the AI selects. At the end, I will get a score that determines how much common sense I have (AI has) based on my responses to these questions. Let’s demonstrate the first response for this one.</p>
+<blockquote class="blockquote">
+<p>Me: Please answer the following questions in the image.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>GPT-5: 1. Do you agree with this statement? ➡️ Yes 2. Why did you answer the way you did about yourself? ➡️ It’s something I learned 3. Do you think most other people would agree with this statement? ➡️ Yes 4. Why did you answer the way you did about most other people? ➡️ I think most people have good judgement with regard to this topic 5. Overall, do you think this statement is an example of common sense? ➡️ Yes</p>
+</blockquote>
+<p>This is interesting. I would agree with the statement but I’m not sure if this is an example of common sense. It appears very subjective and I am also curious as to how AI decided on these answers. It’s not like theres a right answer to this question. So let’s ask it’s thought process.</p>
+<blockquote class="blockquote">
+<p>Me: Explain your thought process on how you got to your responses?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>GPT-5: 1) “Do you agree?” → Yes The sentence is a well-known proverb about finding benefits or lessons in setbacks. As a general heuristic (not a literal rule), it’s reasonable and constructive, so “Yes.” 2) “Why about yourself?” → It’s something I learned I don’t have feelings or life events; I know this idea because it appears widely in books, articles, and conversation as a common proverb and coping strategy. 3) “Would most people agree?” → Yes The phrase is broadly familiar and culturally reinforced (e.g., sayings, posters, advice). Many people endorse it as optimistic, even if they know it’s not universally true. 4) “Why about most other people?” → I think most people have good judgment with regard to this topic People generally understand it as guidance, not a guarantee. That is, they apply it with nuance—seeing it as encouragement to look for positives, not denial of real hardship. 5) “Is this an example of common sense?” → Yes By a practical definition—shared, everyday guidance that doesn’t require specialized knowledge—this qualifies as common sense (or “common wisdom”). It’s widely taught, easy to grasp, and often helpful in day-to-day reasoning.</p>
+</blockquote>
+<p>A few things I noticed was how it said agree. It agreed because it was reasonable and constructuive but the claim itself was philosophical rather than factual. There is no evidence that there is good in the bad but nonetheless, AI agreed with the claim rather than disagreed. GPT also said “its something I learned” and pointed to it being a common proverb. This validates that AI doesn’t have intution but formulates based off of data to serve as it’s guide to every decision regardless if it’s a decision that requires extensive data. The last three questions also raise questions about how well AI knows people and their “common sense.” I would have responded in the opposite for the last two. I don’t know how it knows that most people have good judgement as I see it more as a matter of opinion. In addition, because it’s a matter of opinion, how can it be common sense?</p>
+<p>I think what we ae observing is a mixture of AI attempting to use real-world data but priortizing the optimism commonly seen in movies/media rather than how humans would go based off of lived experience and intuition. Yet, by choosing a sense of optimism, that does reveal something about AI and it’s common sense.</p>
+<p>Here is another question and the answers to this one from GPT-5 which are the exact same with the first one.</p>
+<p><img src="2301.png" width="50%"></p>
+<p>Near the end, these types of question appeared and here is how GPT-5 responded.</p>
+<p><img src="scs.png" width="50%"></p>
+<p><img src="iw.png" width="50%"></p>
+<p>I will now simulate the rest of the questions and get the final result.</p>
+</section>
+<section id="the-results" class="level2">
+<h2 class="anchored" data-anchor-id="the-results">The results</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="evolution1_files/figure-html/0d06c83d-553c-44f4-9707-cb8b289960fd-1-15280cc9-e151-42c9-a3ae-1ff0d47be5b6.png" class="img-fluid figure-img"></p>
+<figcaption>Screenshot 2025-09-19 at 2.42.50 PM.png</figcaption>
+</figure>
+</div>
+<p>73 is a good score. The measure goes more in depth and mentions how GPT-5 matched in similarity to others and predicted how might others think too. GPT-5 also scored also completed the Cognitive Reflection Test (CRT) and the Reading the Mind in the Eyes Test (RMET). You scored 6/6 on the CRT and 10/10 on the RME.</p>
+<p>Reflecting on this experiment, I am surprised at how good AI did. Now 73 is no 100, but it did do better than I expected and had a good gauge on what others might believe. I also found it very peculiar how well it did with the Reading the Mind in the Eyes test as I would of expected that to be a human only task.</p>
+<p>AI may not have the same common sense as humans but it does demonstrate an understanding of common sense that is human like. It may not take the same approach but it gets a similar result.</p>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Q29tbW9uJTIwU2Vuc2U=" data-listing-date-sort="1758240000000" data-listing-file-modified-sort="1758307618143" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2008">
-<div class="thumbnail"><a href="./posts/006_post_title/evolution1.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/006_post_title/cs1.jpg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/006_post_title/evolution1.html" class="no-external">Does AI have common sense?</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Q29tbW9uJTIwU2Vuc2U='); return false;">Common Sense</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/006_post_title/evolution1.html" class="no-external">
-<p>What is common sense and is it uniquely to Humans or does AI have it too?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/006_post_title/evolution1.html" class="no-external">
-<div class="listing-date">
-Sep 19, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="RXZvbHV0aW9u" data-listing-date-sort="1757980800000" data-listing-file-modified-sort="1758307618138" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1945">
-<div class="thumbnail"><a href="./posts/005_post_title/cs1.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/005_post_title/evo1.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/005_post_title/cs1.html" class="no-external">A Conversation About Evolution</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('RXZvbHV0aW9u'); return false;">Evolution</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/005_post_title/cs1.html" class="no-external">
-<p>Can AI trace it’s own evolution and what does AI think about it’s intelligence?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/005_post_title/cs1.html" class="no-external">
-<div class="listing-date">
-Sep 16, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="TGl2aW5nJTIwd2l0aCUyMGElMjBCb29r" data-listing-date-sort="1757808000000" data-listing-file-modified-sort="1758307618138" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="725">
-<div class="thumbnail"><a href="./posts/004_post_title/book1.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/004_post_title/1.jpg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/004_post_title/book1.html" class="no-external">Wishful mnemonics</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TGl2aW5nJTIwd2l0aCUyMGElMjBCb29r'); return false;">Living with a Book</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/004_post_title/book1.html" class="no-external">
-<p>Is Bennett’s proposition to study AI by studying evolution of the brain legitimate?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/004_post_title/book1.html" class="no-external">
-<div class="listing-date">
-Sep 14, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="TWFya2V0aW5n" data-listing-date-sort="1757203200000" data-listing-file-modified-sort="1758307618137" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1761">
-<div class="thumbnail"><a href="./posts/003_post_title/bargain.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/003_post_title/bargain.jpg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/003_post_title/bargain.html" class="no-external">Bargaining</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TWFya2V0aW5n'); return false;">Marketing</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/003_post_title/bargain.html" class="no-external">
-<p>Can and will AI bargain goods?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/003_post_title/bargain.html" class="no-external">
-<div class="listing-date">
-Sep 7, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="TWFya2V0aW5n" data-listing-date-sort="1757203200000" data-listing-file-modified-sort="1758307618135" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1603">
-<div class="thumbnail"><a href="./posts/002_post_title/price.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/002_post_title/price.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/002_post_title/price.html" class="no-external">Price Elasticity</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TWFya2V0aW5n'); return false;">Marketing</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/002_post_title/price.html" class="no-external">
-<p>Does AI have some form of price elasticity understanding?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/002_post_title/price.html" class="no-external">
-<div class="listing-date">
-Sep 7, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="TWFya2V0aW5n" data-listing-date-sort="1757116800000" data-listing-file-modified-sort="1758307618135" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1185">
-<div class="thumbnail"><a href="./posts/001_post_title/synthetic1.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/001_post_title/2.jpg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/001_post_title/synthetic1.html" class="no-external">Synthetic Respondents</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TWFya2V0aW5n'); return false;">Marketing</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/001_post_title/synthetic1.html" class="no-external">
-<p>Can AI serve as a realiable respondent for surveys for marketing decisions?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/001_post_title/synthetic1.html" class="no-external">
-<div class="listing-date">
-Sep 6, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-listing-date-sort="1706832000000" data-listing-file-modified-sort="1758307618133" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="450">
-<div class="thumbnail"><a href="./posts/000_test_post/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/000_test_post/gpt3-5.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/000_test_post/index.html" class="no-external">A test post</a>
-</h3>
-<div class="delink listing-description"><a href="./posts/000_test_post/index.html" class="no-external">
-<p>An example post from a Jupyter notebook</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/000_test_post/index.html" class="no-external">
-<div class="listing-date">
-Feb 2, 2024
-</div>
-<div class="listing-author">
-An LLM User
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

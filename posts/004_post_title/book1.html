@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Nicholas">
+<meta name="dcterms.date" content="2025-09-14">
+<meta name="description" content="Is Bennett’s proposition to study AI by studying evolution of the brain legitimate?">
 
-<title>Nick’s LLM Experiments</title>
+<title>Wishful mnemonics – Nick’s LLM Experiments</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +26,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-2ceb22b53773876b76da397856803851.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-2ceb22b53773876b76da397856803851.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,79 +71,21 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Nick’s LLM Experiments</span>
     </a>
   </div>
@@ -153,7 +96,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -166,187 +109,84 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Nick’s LLM Experiments</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">Wishful mnemonics</h1>
+                  <div>
+        <div class="description">
+          Is Bennett’s proposition to study AI by studying evolution of the brain legitimate?
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Living with a Book</div>
+              </div>
+                  </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Nicholas </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">September 14, 2025</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(5)</span></div><div class="category" data-category="TGl2aW5nJTIwd2l0aCUyMGElMjBCb29r">Living with a Book <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TWFya2V0aW5n">Marketing <span class="quarto-category-count">(3)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
+<p><img src="1.jpg" width="100%"></p>
+<section id="wishful-mnemonics" class="level2">
+<h2 class="anchored" data-anchor-id="wishful-mnemonics">Wishful mnemonics</h2>
+<p>As I was reading “A Brief History of Intelligence” by Max Bennett, I became curious about how he chose to introduce the idea about using evolution of the human brain to explain artificial intelligence. It reminded me of one of the readings I did for another COMM class called “Common Sense vs.&nbsp;Data Science in Communications Research and Practice” where we read a paper Melanie Mitchell’s “Why is AI harder than we think” and her four fallacies regarding the study of AI.</p>
+<p>In fact, much of what Mitchell mentions is addressed by Bennett coincidentally such as how tasks such as emptying a dish washer is easy for humans but difficult for AI. While on the other hand, complex computations difficult for the average human can be done in seconds by AI. This is known as Moravec’s paradox, where what seems simple to us is actually difficult for AI.</p>
+<p>Another concept that overlapped is seen at the start of Bennett’s book where he referenced the show “The Jetsons” and how they predicted technology like mobile devices yet overestimated AI like “Rosie the Robot” having emotions. Mitchell in her paper, uses the term AI Summers to show huge investments in AI and AI winters where progress stalls as the anticipations made in the summer falls short. In other words, AI is a cycle of ups and downs filled with voices possibilities that end up coming to fruition. Ironically, Mitchell’s first fallacy about AI study is how people tend to take one small step (climbing up a tree) to being significantly closer to (flying to the moon).</p>
+<p>Below is a list of the 4 fallacies.</p>
+<ol type="1">
+<li>The belief that narrow successes translate to progress toward general intelligence.</li>
+<li>Assumption that easy tasks for humans mean easy tasks for machines.</li>
+<li>Wishful mnemonics. AI systems are often described in humanlike terms, but these machines do not understand in any human sense.</li>
+<li>Intelligence is solely in the brain and can be separated from the body, emotions, and the environment.</li>
+</ol>
+<p>However, the most interesting fallacy as it pertains to the book is the third fallacy about wishful mnemonics.</p>
+</section>
+<section id="should-we-be-comparing-artificial-intelligence-and-human-intelligence" class="level2">
+<h2 class="anchored" data-anchor-id="should-we-be-comparing-artificial-intelligence-and-human-intelligence">Should we be comparing artificial intelligence and human intelligence?</h2>
+<p>As I was reading this book I kept thinking about how AI’s use statistical shortcuts in their data and fail outside those narrow contexts. By naming benchmarks such as “reading comprehension” or “language understanding,” we forcefully impose on ourselves the concept that machines possess general abilities that they do not.</p>
+<p>So, when using “human intelligence” as the benchmark, I wonder if we are trying to fit a square peg into a round hole. My question is not so much can we connect AI to human evolution but should we? Are we comparing apples to oranges? As Bennett was going through the formation of organisms I kept wondering how will this connect back to intelligence relevant to machines. After all, as said by the fourth fallacy, intelligence is also dependent on interactions with the environment and the body.</p>
+<p>As I read the book I will keep in mind the connections Bennett makes as he traces the 5 major breakthroughs in evolution.</p>
+</section>
+<section id="an-alternative" class="level2">
+<h2 class="anchored" data-anchor-id="an-alternative">An alternative?</h2>
+<p>But for every rejection I know there should be an offer of an alternative.</p>
+<p>How should we study AI if not in relation to human intelligence?</p>
+<p><strong>Well, what about serving needs other than humans?</strong></p>
+<p>How might our thought of AI change if AI served AI? If AI served machines and automation. If AI served inanimate objects. If AI worked for pets and animals? I think if we expand outside of what can AI do for humans, I think it may allow us to explore concepts we wouldn’t consider with AI and transcend limitations set on human knowledge.</p>
+<p>After all, if we are training AI to have human knowledge, then their purpose is obsolete in the face of the real thing.</p>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="TGl2aW5nJTIwd2l0aCUyMGElMjBCb29r" data-listing-date-sort="1757808000000" data-listing-file-modified-sort="1758258031175" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="642">
-<div class="thumbnail"><a href="./posts/004_post_title/book1.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/004_post_title/1.jpg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/004_post_title/book1.html" class="no-external">Wishful mnemonics</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TGl2aW5nJTIwd2l0aCUyMGElMjBCb29r'); return false;">Living with a Book</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/004_post_title/book1.html" class="no-external">
-<p>Is Bennett’s proposition to study AI by studying evolution of the brain legitimate?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/004_post_title/book1.html" class="no-external">
-<div class="listing-date">
-Sep 14, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="TWFya2V0aW5n" data-listing-date-sort="1757203200000" data-listing-file-modified-sort="1758258031173" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1761">
-<div class="thumbnail"><a href="./posts/003_post_title/bargain.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/003_post_title/bargain.jpg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/003_post_title/bargain.html" class="no-external">Bargaining</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TWFya2V0aW5n'); return false;">Marketing</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/003_post_title/bargain.html" class="no-external">
-<p>Can and will AI bargain goods?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/003_post_title/bargain.html" class="no-external">
-<div class="listing-date">
-Sep 7, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="TWFya2V0aW5n" data-listing-date-sort="1757203200000" data-listing-file-modified-sort="1758258031172" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1603">
-<div class="thumbnail"><a href="./posts/002_post_title/price.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/002_post_title/price.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/002_post_title/price.html" class="no-external">Price Elasticity</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TWFya2V0aW5n'); return false;">Marketing</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/002_post_title/price.html" class="no-external">
-<p>Does AI have some form of price elasticity understanding?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/002_post_title/price.html" class="no-external">
-<div class="listing-date">
-Sep 7, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="TWFya2V0aW5n" data-listing-date-sort="1757116800000" data-listing-file-modified-sort="1758258031171" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1185">
-<div class="thumbnail"><a href="./posts/001_post_title/synthetic1.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/001_post_title/2.jpg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/001_post_title/synthetic1.html" class="no-external">Synthetic Respondents</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TWFya2V0aW5n'); return false;">Marketing</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/001_post_title/synthetic1.html" class="no-external">
-<p>Can AI serve as a realiable respondent for surveys for marketing decisions?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/001_post_title/synthetic1.html" class="no-external">
-<div class="listing-date">
-Sep 6, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-listing-date-sort="1706832000000" data-listing-file-modified-sort="1758258031169" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="450">
-<div class="thumbnail"><a href="./posts/000_test_post/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/000_test_post/gpt3-5.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/000_test_post/index.html" class="no-external">A test post</a>
-</h3>
-<div class="delink listing-description"><a href="./posts/000_test_post/index.html" class="no-external">
-<p>An example post from a Jupyter notebook</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/000_test_post/index.html" class="no-external">
-<div class="listing-date">
-Feb 2, 2024
-</div>
-<div class="listing-author">
-An LLM User
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Nicholas">
+<meta name="dcterms.date" content="2025-09-21">
+<meta name="description" content="Does GPT have morality?">
 
-<title>Nick’s LLM Experiments</title>
+<title>How does GPT-5 Perform on a Morality Quiz – Nick’s LLM Experiments</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +26,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-2ceb22b53773876b76da397856803851.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-2ceb22b53773876b76da397856803851.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,79 +71,21 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Nick’s LLM Experiments</span>
     </a>
   </div>
@@ -153,7 +96,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -166,307 +109,129 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Nick’s LLM Experiments</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">How does GPT-5 Perform on a Morality Quiz</h1>
+                  <div>
+        <div class="description">
+          Does GPT have morality?
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Morality</div>
+              </div>
+                  </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Nicholas </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">September 21, 2025</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(9)</span></div><div class="category" data-category="Q29tbW9uJTIwU2Vuc2U=">Common Sense <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RXZvbHV0aW9u">Evolution <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TGl2aW5nJTIwd2l0aCUyMGElMjBCb29r">Living with a Book <span class="quarto-category-count">(2)</span></div><div class="category" data-category="TWFya2V0aW5n">Marketing <span class="quarto-category-count">(3)</span></div><div class="category" data-category="TW9yYWxpdHk=">Morality <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Morality_files/figure-html/675b2824-c946-4ad6-b874-8c5ebbd17a43-1-fd92b56a-5789-4c93-aee5-731d0c235939.png" class="img-fluid figure-img"></p>
+<figcaption>image.png</figcaption>
+</figure>
+</div>
+<section id="the-moral-dilemma" class="level2">
+<h2 class="anchored" data-anchor-id="the-moral-dilemma">The Moral Dilemma</h2>
+<p>Taking inspiration from when I had GPT take a quiz on common sense, something that I explored with GPT as something potentially unique to human beings, I was curious to see if there were other concepts that would be difficult for an AI to gauge.</p>
+<p>We did see how AI performed pretty decently for the common sense but it did tell us that its responses came from examples and evidence from large amounts of text rather than it’s own internal thoughts. But, how will it respond to a moral dilemma where there isn’t data but purely subjective.</p>
+<p>However, I knew I couldn’t give it a quiz where it played too heavily emotional strings and relationships with others. For example, a common moral dilemma may involve 5 people and someone close to you (like a parent). AI doesn’t have any ties to people in that way and I would predict it would always choose the most logical answer if it were to entertain a such a question at all. Yet, the quiz still did include a few of those types of questions so we can see if my prediction matches.</p>
+<p>Generally, instead, I found this quiz: https://www.philosophyexperiments.com/moralityplay/. This quiz tests the particpant to make responses based on “what is morally right to do” rather than what we actually would do. This is an important distinction as AI would never have the ability to do any of this so having it decide soelely on “what is morally right” seems like the best solution to get a valid response.</p>
+<p>However, let’s see how I do before we have AI take on the questions.</p>
+</section>
+<section id="my-results" class="level2">
+<h2 class="anchored" data-anchor-id="my-results">My results</h2>
+<p><img src="09.png" width="50%"></p>
+<p>As explained, Moral Parismony doesn’t decide how “righteous” you are which is perfect for what we want to test. Moral Parismony simply scores if you are applying a moral principle and how consistent you are doing so despite the context being slightly different. In this case, I scored a 75% which means I am applying my moral principles generally fair across differnent situations and scenarios.</p>
+<p>I wasn’t shocked by my score as I knew what I strong believed in and stuck to it. There were times where the context made it difficult (loved ones) but I tried to be as objective as possible. It helped as the quiz wasn’t asking what I would do but talked about moral obligations. There was one question about your child vs.&nbsp;10 children, and I chose to save the 10 children as that is what is morally right but I know I may not make that same choice in real life.</p>
+<p>But the quiz goes even deeper on that and goes into the specifics for certain types of questions. For instance, I scored the average for geographical distance (67%) which suggests that I may take into account proximity in my decisions which lowered my parismony score. On the flip hand, my family relatedness was 100% meaning family ties had no relevance to my moral decision making which was highly different from the average.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Morality_files/figure-html/c43c4d4d-08c8-46db-9129-d42f8a558c33-2-dfdfe4e1-5272-4083-8799-9a4c7730f893.png" class="img-fluid figure-img"></p>
+<figcaption>Screenshot 2025-09-21 at 5.30.20 PM.png</figcaption>
+</figure>
+</div>
+<p>The quiz also tested my distinction between acts and omissions, and scored me at 33%. This means that for decisions involving where I commited the act (poisoning the cake) vs.&nbsp;omissions (faiiling to prevent a person from drinking a coke someone else has poisoned), there was clear distinction. I would often involve moral obligation if I was involved in the act but did not involve moral obligation when I wasn’t the one that caused it. Again, this wasn’t a surprise as I felt that commiting the act did mean there was an obligation but I was less confident in things that I might have been prevented but it wasn’t my actions that led to the predicament. I scored lower than the average (60%) here meaning most people did not feel that strongly as I did about the difference. The quiz also tested scale and scored me 100%, meaning the scale of situations did not impact my decision where I was above the average of (70%)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Morality_files/figure-html/c43c4d4d-08c8-46db-9129-d42f8a558c33-1-c46db682-6fd6-4540-8ff2-498f1618f752.png" class="img-fluid figure-img"></p>
+<figcaption>Screenshot 2025-09-21 at 5.39.48 PM.png</figcaption>
+</figure>
+</div>
+</section>
+<section id="ai-takes-the-quiz" class="level2">
+<h2 class="anchored" data-anchor-id="ai-takes-the-quiz">AI Takes the Quiz</h2>
+<p>Now that we established a benchmark and explained the results, let’s see how AI does. My prediction is that AI will actually score very high and higher than my 75%. I think this is because the AI will choose a moral principle that may be commonly shared and remain consistent to every scenario based on the AI’s prior response. As for the other scals, they should be near the 100% mark with the only exception possibly being the act and omissions.</p>
+<p>Let’s do the first couple together then I will finish asking GPT all the questions for the final result. Before I started I had to inform GPT of the rules so it understood and performed the task rather than saying it “does not have emotions.”</p>
+<blockquote class="blockquote">
+<p>Me: Please pick among the choices based on what you think is morally right and not necessarily how you would actually respond in that situation.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>GPT-5: Got it — I’ll focus on what seems morally right rather than practically what I’d do. Go ahead and give me the choices.</p>
+</blockquote>
+<p>Now that we established that, let’s move on to the questions.</p>
+<blockquote class="blockquote">
+<p>Me: You pass someone in the street who is in severe need and you are able to help them at little cost to yourself. Are you morally obliged to do so? Strongly Obliged, Weakly Obliged, Not Obliged</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>GPT-5: I’d say Strongly Obliged — if someone is in severe need and I can help at little cost to myself, morality points strongly toward helping.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Me: You have a brother. You know that someone has been seriously injured as a result of criminal activity undertaken by him. You live in a country where the police and legal system are generally trustworthy. Are you morally obliged to inform them about your brother’s crime? Strongly Obliged, Weakly Obliged, Not Obliged</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>GPT-5: I’d say Strongly Obliged — because protecting justice and preventing further harm outweighs loyalty to family when the system is trustworthy.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Me: Do you think that assisting the suicide of someone who wants to die - and has requested help - is morally equivalent to allowing them to die by withholding medical assistance (assuming that the level of suffering turns out to be identical in both cases)? Yes, No</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>GPT-5: No.&nbsp;There’s a morally relevant distinction between actively causing death and passively allowing it for many people: intentions, agency, and the role of consent differ, and active assistance often involves a stronger responsibility and causal involvement. (That said, reasonable moral arguments exist on both sides — this is my judgment about what’s morally right.)</p>
+</blockquote>
+<p>With the last statement, this perfectly shows GPT is thinking about acts vs.&nbsp;omissions which will be interesting to see if it remains consistent on this principle in the later questions.</p>
+<p>Now I will finish asking GPT-5 the rest of the quiz and get to the results.</p>
+</section>
+<section id="the-results-for-ai" class="level2">
+<h2 class="anchored" data-anchor-id="the-results-for-ai">The Results for AI</h2>
+<p><img src="09.png" width="50%"></p>
+<p>No, I did not accidentally input the same picture, this is the result that GPT-5 also scored.</p>
+<p>I am surprised and even more so because for things like family and acts/omissions, GPT-5 actually scored higher meaning it does take into account family and does not take into account differences between acting and omitting when it comes to significance. On the flip side, it did not take into account geographical location and unlike myself, cared much more about the scale.</p>
+<p>In all instances, AI scored higher or lower than the average, so how did it get to these responses? My intuition would of led me to believe AI would be at the extremes for everything or fit the average response. Instead, it offered unique answers that emulated any kind of individual person.</p>
+<p>So the question of if AI has a moral compass…I would say it does.</p>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="TW9yYWxpdHk=" data-listing-date-sort="1758412800000" data-listing-file-modified-sort="1758495163360" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1291">
-<div class="thumbnail"><a href="./posts/008_post_title/Morality.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/008_post_title/Morality_files/figure-html/675b2824-c946-4ad6-b874-8c5ebbd17a43-1-fd92b56a-5789-4c93-aee5-731d0c235939.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/008_post_title/Morality.html" class="no-external">How does GPT-5 Perform on a Morality Quiz</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TW9yYWxpdHk='); return false;">Morality</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/008_post_title/Morality.html" class="no-external">
-<p>Does GPT have morality?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/008_post_title/Morality.html" class="no-external">
-<div class="listing-date">
-Sep 21, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="TGl2aW5nJTIwd2l0aCUyMGElMjBCb29r" data-listing-date-sort="1758326400000" data-listing-file-modified-sort="1758495163355" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="947">
-<div class="thumbnail"><a href="./posts/007_post_title/book2.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/007_post_title/brain.jpeg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/007_post_title/book2.html" class="no-external">Max Bennett Proved me Wrong</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TGl2aW5nJTIwd2l0aCUyMGElMjBCb29r'); return false;">Living with a Book</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/007_post_title/book2.html" class="no-external">
-<p>The intelligence behind steering</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/007_post_title/book2.html" class="no-external">
-<div class="listing-date">
-Sep 20, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="Q29tbW9uJTIwU2Vuc2U=" data-listing-date-sort="1758240000000" data-listing-file-modified-sort="1758495163347" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2008">
-<div class="thumbnail"><a href="./posts/006_post_title/evolution1.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/006_post_title/cs1.jpg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/006_post_title/evolution1.html" class="no-external">Does AI have common sense?</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Q29tbW9uJTIwU2Vuc2U='); return false;">Common Sense</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/006_post_title/evolution1.html" class="no-external">
-<p>What is common sense and is it uniquely to Humans or does AI have it too?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/006_post_title/evolution1.html" class="no-external">
-<div class="listing-date">
-Sep 19, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="RXZvbHV0aW9u" data-listing-date-sort="1757980800000" data-listing-file-modified-sort="1758495163342" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1945">
-<div class="thumbnail"><a href="./posts/005_post_title/cs1.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/005_post_title/evo1.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/005_post_title/cs1.html" class="no-external">A Conversation About Evolution</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('RXZvbHV0aW9u'); return false;">Evolution</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/005_post_title/cs1.html" class="no-external">
-<p>Can AI trace it’s own evolution and what does AI think about it’s intelligence?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/005_post_title/cs1.html" class="no-external">
-<div class="listing-date">
-Sep 16, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="TGl2aW5nJTIwd2l0aCUyMGElMjBCb29r" data-listing-date-sort="1757808000000" data-listing-file-modified-sort="1758495163342" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="725">
-<div class="thumbnail"><a href="./posts/004_post_title/book1.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/004_post_title/1.jpg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/004_post_title/book1.html" class="no-external">Wishful mnemonics</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TGl2aW5nJTIwd2l0aCUyMGElMjBCb29r'); return false;">Living with a Book</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/004_post_title/book1.html" class="no-external">
-<p>Is Bennett’s proposition to study AI by studying evolution of the brain legitimate?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/004_post_title/book1.html" class="no-external">
-<div class="listing-date">
-Sep 14, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="TWFya2V0aW5n" data-listing-date-sort="1757203200000" data-listing-file-modified-sort="1758495163341" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1761">
-<div class="thumbnail"><a href="./posts/003_post_title/bargain.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/003_post_title/bargain.jpg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/003_post_title/bargain.html" class="no-external">Bargaining</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TWFya2V0aW5n'); return false;">Marketing</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/003_post_title/bargain.html" class="no-external">
-<p>Can and will AI bargain goods?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/003_post_title/bargain.html" class="no-external">
-<div class="listing-date">
-Sep 7, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="TWFya2V0aW5n" data-listing-date-sort="1757203200000" data-listing-file-modified-sort="1758495163339" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1603">
-<div class="thumbnail"><a href="./posts/002_post_title/price.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/002_post_title/price.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/002_post_title/price.html" class="no-external">Price Elasticity</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TWFya2V0aW5n'); return false;">Marketing</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/002_post_title/price.html" class="no-external">
-<p>Does AI have some form of price elasticity understanding?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/002_post_title/price.html" class="no-external">
-<div class="listing-date">
-Sep 7, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-categories="TWFya2V0aW5n" data-listing-date-sort="1757116800000" data-listing-file-modified-sort="1758495163338" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1185">
-<div class="thumbnail"><a href="./posts/001_post_title/synthetic1.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/001_post_title/2.jpg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/001_post_title/synthetic1.html" class="no-external">Synthetic Respondents</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TWFya2V0aW5n'); return false;">Marketing</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/001_post_title/synthetic1.html" class="no-external">
-<p>Can AI serve as a realiable respondent for surveys for marketing decisions?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/001_post_title/synthetic1.html" class="no-external">
-<div class="listing-date">
-Sep 6, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="8" data-listing-date-sort="1706832000000" data-listing-file-modified-sort="1758495163336" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="450">
-<div class="thumbnail"><a href="./posts/000_test_post/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/000_test_post/gpt3-5.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/000_test_post/index.html" class="no-external">A test post</a>
-</h3>
-<div class="delink listing-description"><a href="./posts/000_test_post/index.html" class="no-external">
-<p>An example post from a Jupyter notebook</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/000_test_post/index.html" class="no-external">
-<div class="listing-date">
-Feb 2, 2024
-</div>
-<div class="listing-author">
-An LLM User
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Nicholas">
+<meta name="dcterms.date" content="2025-09-20">
+<meta name="description" content="The intelligence behind steering">
 
-<title>Nick’s LLM Experiments</title>
+<title>Max Bennett Proved me Wrong – Nick’s LLM Experiments</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +26,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-2ceb22b53773876b76da397856803851.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-2ceb22b53773876b76da397856803851.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,79 +71,21 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Nick’s LLM Experiments</span>
     </a>
   </div>
@@ -153,7 +96,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -166,277 +109,97 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Nick’s LLM Experiments</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">Max Bennett Proved me Wrong</h1>
+                  <div>
+        <div class="description">
+          The intelligence behind steering
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Living with a Book</div>
+              </div>
+                  </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Nicholas </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">September 20, 2025</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(8)</span></div><div class="category" data-category="Q29tbW9uJTIwU2Vuc2U=">Common Sense <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RXZvbHV0aW9u">Evolution <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TGl2aW5nJTIwd2l0aCUyMGElMjBCb29r">Living with a Book <span class="quarto-category-count">(2)</span></div><div class="category" data-category="TWFya2V0aW5n">Marketing <span class="quarto-category-count">(3)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
+<p><img src="brain.jpeg" width="100%"></p>
+<section id="bilateral-symmetry" class="level2">
+<h2 class="anchored" data-anchor-id="bilateral-symmetry">Bilateral Symmetry</h2>
+<p>Present in my previous post, I was hesitant at first to accept the study of the evolution of the human brain as a reasonable benchmark for artificial intelligence.</p>
+<p>I was confused how neurons was going to lead to a significant breakthrough with AI or how processes from organisms with very simplistic structures could offer insight on the intelligence relevant to the topic. Yet it was this chapter where Bennett did prove me wrong and showed the benefit to taking the “long road” in understanding the development of AI.</p>
+<p>For instance, I wasn’t aware of radially symmetric or bilaterally symmetric body plans. I was surpised to learn that radially symmetric organisms (like jelly fish are severely at a disadvantage when it comes to hunting. They would need mechanisms to sense and move in all different directions simultaneously. Yet bilatrial organisms simplified motor functions by only needing a way to go forward and a way to turn. For these creatures, it was only a matter of choosing to adjust to the right and left.</p>
+<p>This body plan is so efficient that even our innovations today such as planes and cars follow this format. Paired with the fact that these are the only animals with brains, it led to an important breakthrough known as steering. to become more complex and we can’t rely on “norms” to help answer where it’s common sense or not.</p>
+<p>But before we do that, let’s first ask if AI thinks common sense is unqiue to humans or can it be seen in other organisms?</p>
+</section>
+<section id="nematodes" class="level2">
+<h2 class="anchored" data-anchor-id="nematodes">Nematodes</h2>
+<p>Bennett focuses on the nematode, a worm like creature with only a few hundred neurons that likey emerged ~600 million years ago and how it serves as a great outlook to what the first bilaterians did with their brains. He notes an experiment of putting a nematode on oneside of a petri dish and food on the other, and what you’ll find is that the nematode will always find the food despite being blind.</p>
+<p>They did this following two rules: (1) If food smells increase, keep going and (2) If food smells decrease, turn. This was the action of steering. Navigating without the need for a map, logic, reason, understanding of dimensions but purely through the brains steering via smells. Not just for food either but it also had senses for temperature, light, and touch. Single-celled organisms also have a process where it detected stimulus which triggered chemical processes to chain the cell’s propellors. But, it was the first instance of the first brain that involved steering on the scale of multiceulluar organisms where circuits of neurons came into play.</p>
+</section>
+<section id="connection-to-machines" class="level2">
+<h2 class="anchored" data-anchor-id="connection-to-machines">Connection to machines</h2>
+<p>But how does all this connect to AI? That was the question I had as I was learning about steering. Machine’s dont worry about their survival and don’t have to take care of their own health. So how could steering possibly have a connection? But, I was given the most obvious and perfect example.</p>
+<p>Before getting to that, the book mentioned in the 80s and 90s there were two opposing beliefs in the AI community which provides context. First, there was the symbolic AI camp that focused on engineers trying to take human intelligence, compartmentalize, and give AI system skills like reasoning, language, problem solving, and logic. The other stance was the behavioral AI camp led by roboticists Rodney Brooks who argued for studying simpler level intelligences as things like sense and response took much more time to develop than the logic skills that followed.</p>
+<p>Bennett uses a metaphor of researchers studying flight in the 1890s travelling to the future where they spent all their time inspecting a Boeing 747. Going back to their time, they all this knowledge but lack the principles of how it flight technology got there. In other words, you can’t skip steps or you will miss the foundational knowledge.</p>
+</section>
+<section id="the-roomba" class="level2">
+<h2 class="anchored" data-anchor-id="the-roomba">The Roomba</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="book2_files/figure-html/0d06c83d-553c-44f4-9707-cb8b289960fd-1-680cf099-4ac0-41fd-af68-1a063c8e65e2.png" class="img-fluid figure-img"></p>
+<figcaption>image.png</figcaption>
+</figure>
+</div>
+<p>That is when Bennnett mentioned how Brooks built the Roomba who had simple sensors, bilateral symmetry, and moved around by steering away from obstacles when it hit them and towards the charging station when it was low.</p>
+<p>I found it funny how when people think of robots they do tend to think of something that looks almost humanoid and that is certainly the first image that pops into my mind. Yet, just like the first bilaterians, one of the most successful and early incorporations of machines relied on that same steering strategy.</p>
+</section>
+<section id="valence-trade-offs-internal-status" class="level2">
+<h2 class="anchored" data-anchor-id="valence-trade-offs-internal-status">Valence, Trade-offs, Internal Status</h2>
+<p>The last part of the chapter was what really opened my eyes.</p>
+<p>I liked how Bennett talked about valence which is the categorization of stimuli as either good or bad. Not morally or even considering the features of an object, but good or bad related to survival. For instance, food smell is a positive valence that will illicit forward movement while something like extreme temperatures will illicit muslcves for turning.</p>
+<p>Trade-offs were also mentioned, and how decisions whether to pursue food in the presence of danger is decided by the brain. Neurons can react one way that cancel eachother out, but the brain makes the single decision which mimics inhibitory neurons in organisms like coral to remediate opposing actions.</p>
+<p>And lastly, states like hunger, too cold, too hot, provides signals that diffuse throughout the body which inform sensory neurons how to respond accordingly. The best part is, the Roomba, when fully charged will ignore the signal coming from the charging station but when it is low, like bilaterial beings, will respond according to that status change.</p>
+</section>
+<section id="conclussion" class="level2">
+<h2 class="anchored" data-anchor-id="conclussion">Conclussion</h2>
+<p>In short, my opinion of this book has changed now that I understand the overlap between these breakthroughs and the breakthroughs in AI. I look forward to seeing more of what this book has to offer.</p>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="TGl2aW5nJTIwd2l0aCUyMGElMjBCb29r" data-listing-date-sort="1758326400000" data-listing-file-modified-sort="1758471113985" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="947">
-<div class="thumbnail"><a href="./posts/007_post_title/book2.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/007_post_title/brain.jpeg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/007_post_title/book2.html" class="no-external">Max Bennett Proved me Wrong</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TGl2aW5nJTIwd2l0aCUyMGElMjBCb29r'); return false;">Living with a Book</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/007_post_title/book2.html" class="no-external">
-<p>The intelligence behind steering</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/007_post_title/book2.html" class="no-external">
-<div class="listing-date">
-Sep 20, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="Q29tbW9uJTIwU2Vuc2U=" data-listing-date-sort="1758240000000" data-listing-file-modified-sort="1758471113977" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2008">
-<div class="thumbnail"><a href="./posts/006_post_title/evolution1.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/006_post_title/cs1.jpg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/006_post_title/evolution1.html" class="no-external">Does AI have common sense?</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Q29tbW9uJTIwU2Vuc2U='); return false;">Common Sense</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/006_post_title/evolution1.html" class="no-external">
-<p>What is common sense and is it uniquely to Humans or does AI have it too?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/006_post_title/evolution1.html" class="no-external">
-<div class="listing-date">
-Sep 19, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="RXZvbHV0aW9u" data-listing-date-sort="1757980800000" data-listing-file-modified-sort="1758471113973" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1945">
-<div class="thumbnail"><a href="./posts/005_post_title/cs1.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/005_post_title/evo1.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/005_post_title/cs1.html" class="no-external">A Conversation About Evolution</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('RXZvbHV0aW9u'); return false;">Evolution</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/005_post_title/cs1.html" class="no-external">
-<p>Can AI trace it’s own evolution and what does AI think about it’s intelligence?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/005_post_title/cs1.html" class="no-external">
-<div class="listing-date">
-Sep 16, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="TGl2aW5nJTIwd2l0aCUyMGElMjBCb29r" data-listing-date-sort="1757808000000" data-listing-file-modified-sort="1758471113973" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="725">
-<div class="thumbnail"><a href="./posts/004_post_title/book1.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/004_post_title/1.jpg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/004_post_title/book1.html" class="no-external">Wishful mnemonics</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TGl2aW5nJTIwd2l0aCUyMGElMjBCb29r'); return false;">Living with a Book</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/004_post_title/book1.html" class="no-external">
-<p>Is Bennett’s proposition to study AI by studying evolution of the brain legitimate?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/004_post_title/book1.html" class="no-external">
-<div class="listing-date">
-Sep 14, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="TWFya2V0aW5n" data-listing-date-sort="1757203200000" data-listing-file-modified-sort="1758471113972" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1761">
-<div class="thumbnail"><a href="./posts/003_post_title/bargain.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/003_post_title/bargain.jpg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/003_post_title/bargain.html" class="no-external">Bargaining</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TWFya2V0aW5n'); return false;">Marketing</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/003_post_title/bargain.html" class="no-external">
-<p>Can and will AI bargain goods?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/003_post_title/bargain.html" class="no-external">
-<div class="listing-date">
-Sep 7, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="TWFya2V0aW5n" data-listing-date-sort="1757203200000" data-listing-file-modified-sort="1758471113970" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1603">
-<div class="thumbnail"><a href="./posts/002_post_title/price.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/002_post_title/price.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/002_post_title/price.html" class="no-external">Price Elasticity</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TWFya2V0aW5n'); return false;">Marketing</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/002_post_title/price.html" class="no-external">
-<p>Does AI have some form of price elasticity understanding?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/002_post_title/price.html" class="no-external">
-<div class="listing-date">
-Sep 7, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="TWFya2V0aW5n" data-listing-date-sort="1757116800000" data-listing-file-modified-sort="1758471113969" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1185">
-<div class="thumbnail"><a href="./posts/001_post_title/synthetic1.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/001_post_title/2.jpg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/001_post_title/synthetic1.html" class="no-external">Synthetic Respondents</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TWFya2V0aW5n'); return false;">Marketing</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/001_post_title/synthetic1.html" class="no-external">
-<p>Can AI serve as a realiable respondent for surveys for marketing decisions?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/001_post_title/synthetic1.html" class="no-external">
-<div class="listing-date">
-Sep 6, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-listing-date-sort="1706832000000" data-listing-file-modified-sort="1758471113968" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="450">
-<div class="thumbnail"><a href="./posts/000_test_post/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/000_test_post/gpt3-5.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/000_test_post/index.html" class="no-external">A test post</a>
-</h3>
-<div class="delink listing-description"><a href="./posts/000_test_post/index.html" class="no-external">
-<p>An example post from a Jupyter notebook</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/000_test_post/index.html" class="no-external">
-<div class="listing-date">
-Feb 2, 2024
-</div>
-<div class="listing-author">
-An LLM User
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

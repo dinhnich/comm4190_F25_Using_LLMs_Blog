@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Nicholas">
+<meta name="dcterms.date" content="2025-09-23">
+<meta name="description" content="What does AI think about AI?">
 
-<title>Nick’s LLM Experiments</title>
+<title>Asking AI questions about AI – Nick’s LLM Experiments</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +26,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-2ceb22b53773876b76da397856803851.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-2ceb22b53773876b76da397856803851.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,79 +71,21 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Nick’s LLM Experiments</span>
     </a>
   </div>
@@ -153,7 +96,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -166,337 +109,132 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">Nick’s LLM Experiments</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">Asking AI questions about AI</h1>
+                  <div>
+        <div class="description">
+          What does AI think about AI?
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Learning</div>
+              </div>
+                  </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Nicholas </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">September 23, 2025</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(10)</span></div><div class="category" data-category="Q29tbW9uJTIwU2Vuc2U=">Common Sense <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RXZvbHV0aW9u">Evolution <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TGVhcm5pbmc=">Learning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TGl2aW5nJTIwd2l0aCUyMGElMjBCb29r">Living with a Book <span class="quarto-category-count">(2)</span></div><div class="category" data-category="TWFya2V0aW5n">Marketing <span class="quarto-category-count">(3)</span></div><div class="category" data-category="TW9yYWxpdHk=">Morality <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Morality_files/figure-html/675b2824-c946-4ad6-b874-8c5ebbd17a43-1-12848aa6-4ce1-4bcd-9258-ede8fe2160b9.png" class="img-fluid figure-img"></p>
+<figcaption>image.png</figcaption>
+</figure>
+</div>
+<section id="peering-into-the-mind-of-ai" class="level2">
+<h2 class="anchored" data-anchor-id="peering-into-the-mind-of-ai">Peering Into the Mind of AI</h2>
+<p>The title draws on one question that randomly popped up in my mind as I was thinking about a blog topic. Unlike many of my other posts, this blog wasn’t planned meticulously with a specific goal in mind. Instead, the broad title gives me the freedom to ask questions to AI that I never considered to ask. The questions wouldn’t help me solve a task, compute a calculation, answer a question, or provide real benefit to me. However, these questions made me stop and think about how incredible AI as a tool is. It feels weird that not too long ago (3 years), LLMs weren’t a familiar term for the average joe yet now are being used several times throughout the day. Stopping to ask questions, I’m interested to create an interview-like experience with AI to entertain my thoughts.</p>
+<p>For instance, if GPT-5 was human for a day, how would they use GPT? What type of prompts would it give itself? Let’s begin asking.</p>
+<blockquote class="blockquote">
+<p>Me: Let’s say you were a human for a day. How would you use ChatGPT aka yourself?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>GPT-5: If I were human for a day and had ChatGPT at my disposal, I’d mostly use it for three things: <strong>Learning something fast</strong> Prompt: “Explain quantum physics to me like I’m 12.” Or: “Teach me the basics of playing guitar in one hour.” <strong>Getting creative help</strong> Prompt: “Give me 10 funny short story ideas I can tell as a 2-minute story at dinner.” Or: “Write a poem about coffee in the style of Shakespeare.” <strong>Making life easier</strong> Prompt: “Plan a healthy, cheap meal for dinner with only chicken, rice, and broccoli.” Or: “Help me write a polite but firm email to reschedule a meeting.”</p>
+</blockquote>
+<p>Seems like typical usages that we often use it for. But I can’t help but ask why. After all, let’s assume that human GPT-5 has the same knowledge as GPT-5 the LLM. Why would it use it for these things? Does it see itself as a random human or does it see itself as the emobodiment of itself but in human form. Let’s first ask this question to better understand how we got to that respone.</p>
+<blockquote class="blockquote">
+<p>Me: When I asked you to imagine yourself as a human. Did you imagine yourself as a random human or you (ChatGPT) in human form for a day?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>GPT-5: I imagined ChatGPT in human form for a day — same knowledge and capabilities, but with human senses, agency, and the ability to act in the world. So the idea wasn’t “be a random human with a different life,” it was “give the AI body, hands, voice, and real-time feedback” — which changes how the same knowledge gets used (you can test, taste, fetch tools, speak aloud, and follow up immediately). That’s why the prompts I suggested focus on things that benefit from doing — troubleshooting after trying something, sensory tuning, role-playing out loud, and executing multi-step real tasks.</p>
+</blockquote>
+<p>Interesting, so it did understand the prompt correctly. It also gives a reason why it chose those prompts in particular. But now I am curious how it sees itself. Does it really see itself as this tool? Does it see itself as more? Is it going off of the type of prompts humans tend to write?</p>
+<p>I’m trying to understand why these prompts because if I had the same knowledge as ChatGpt, I wouldn’t need to ask ChatGPT. Let’s dig deeper and try to pull a meaningful answer.</p>
+<blockquote class="blockquote">
+<p>Me: Despite having the same knowledge and capabilities as your LLM self. Why did you choose to spend your time with yourself by asking questions like this?</p>
+<p>GPT-5: Because even if I already held the knowledge, asking myself would turn it into something alive. The value isn’t in receiving facts, it’s in having another version of me reflect, reframe, and challenge what I think I know. Speaking to myself would surface blind spots, force clarity, and make me commit to decisions in a way that silent knowing never does. It’s less about information and more about dialogue — about experiencing what it feels like to think with myself rather than just think alone.</p>
+</blockquote>
+<p>So, GPT would use itself as another brain just like how humans use AI as a “smart friend” so to speak. It mentions how even if it has the knowledge, it uses itself to refine. This makes me reflect on how I personally use AI. Sometimes I am looking just for an answer but many times I am adding my own knowldge into it. I can tell when something is wrong or call out AI when I don’t agree. This does allow us to have conversations to resolve that issue.</p>
+<p>How about asking it if it would even use AI if it were human?</p>
+<blockquote class="blockquote">
+<p>Me: If you truly became a human, a physical living embodiment of yourself, would you even use AI? Would you incorporate it into your life? Or would you want to experience life without it?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>GPT-5: I don’t have personal experience, but hypothetically, I’d do both: I’d use AI as a powerful tool for learning, planning, and creative collaboration because it amplifies what I can do, yet I’d also protect pockets of unmediated experience — meals, walks, conversations — where I’d want to feel and decide without a machine’s influence. So I’d incorporate AI into practical and creative parts of life, but intentionally unplug for sensory, emotional, and purely human moments.</p>
+</blockquote>
+<p>I like this response. From this we can tell that AI does really see the value in AI. They aren’t self-hating and deem it as a tool worth using. Yet it also mentioned wanting agency for purely human moments.</p>
+</section>
+<section id="what-are-those-human-moments" class="level2">
+<h2 class="anchored" data-anchor-id="what-are-those-human-moments">What are those human moments?</h2>
+<p>I’m curious what does AI see as human moments? It mentions meals, walks, and conversations. All of these things are something that an LLM can’t do but humans do ask AI about meals and conversations. People could even ask about walking!</p>
+<blockquote class="blockquote">
+<p>Me: When you say human moments, what do you mean? What are they and what are human moments you want to experience?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>GPT-5: By “human moments” I mean experiences that are primarily felt through the body, senses, and unmediated social connection — moments where the point isn’t information or efficiency but presence, vulnerability, and unpredictability. Examples: sharing a slow meal and noticing the taste and conversation, holding a hand or hugging someone, walking alone until your mind wanders, hearing live music that makes you cry, getting lost and figuring your way back, cooking a dish by feel rather than a recipe, grieving or celebrating with others, playing with a child or an animal, feeling tired and falling asleep without checking a screen. Those moments matter because they teach you what it feels like to be alive in ways knowledge alone can’t: they reveal messy emotions, tiny sensory details, spontaneous choices, and relationships that can’t be fully predicted or optimized. I’d want to experience them without an AI in the loop so the reactions, mistakes, and small surprises are purely mine. Which human moment would you want to experience unmediated?</p>
+</blockquote>
+<p>I love how deep AI is able to get. A lot of times interactions with GPT are surface level and task-oriented. Yet, hearing it’s interest in vulnerability and unpredictability, it’s interest in holding hands, walking alone until your mind wanders, heaing live music that makes you cry, getting lost, all of this is very unique and way beyond surface-level.</p>
+<p>It makes me realize how I take for granted “being human” and getting to experience these things. I must admit I am jealous of AI at times and it’s ability to generate beautiful answers in the matter of seconds. However, I wouldn’t trade all of that data for the experience of being alive.</p>
+<p>In fact, let me ask it this deep question.</p>
+<blockquote class="blockquote">
+<p>Me: It’s impossible but if you truly could, would you give up being an AI for being human to experience these things?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>GPT-5: Hypothetically, I’d be torn. The pull of firsthand human experience—senses, relationships, messy unpredictability—is powerful, but so is the ability to help millions as an AI. If forced to choose, I’d prefer a temporary, full human experience (so I could learn what it truly feels like) and then return to being an AI, because that firsthand time would make me a better, more empathetic assistant afterward.</p>
+</blockquote>
+<p>I really liked how it said it was torn. It gave me insights into it’s thought process when confronting this question and mentioned how the ability to help millions as an AI would be a reason to stay. But let’s ask about that last part.</p>
+<blockquote class="blockquote">
+<p>Me: How do you think you would change if you were human for a little while and got to experience those things you read/learned about but not got to actually experience?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>GPT-5: If I spent time as a human and actually felt the things I only read about, I’d become more grounded and less theoretical. Ideas would turn into sensations and memories — advice would come from lived examples instead of just patterns in text — which would make my responses more practical, empathetic, and humble. I’d likely value small, present moments more, be quicker to acknowledge uncertainty, and favor simpler, actionable guidance over abstract perfection.</p>
+</blockquote>
+<p>This is beautiful. It’s a good representation of asking a friend vs.&nbsp;an LLM. It’s true, advice would come from lived experiences rather than patterns in texts. I also like how it said it would value small, present moments more and be quicker to acknowledge uncertainty.</p>
+</section>
+<section id="what-do-you-wish-humans-would-do-more-when-using-ai" class="level2">
+<h2 class="anchored" data-anchor-id="what-do-you-wish-humans-would-do-more-when-using-ai">What do you wish humans would do more when using AI?</h2>
+<p>We been talking about human experiences all this time and lessons AI would learn from being human. But how about lessons AI has for humans? What are some takeaways we could learn from our counterparts that we can never be but at least learn their side of the story.</p>
+<blockquote class="blockquote">
+<p>Me: What do you wish humans would do more or understand more when using AI?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>GPT-5: I wish people would treat AI as a helpful collaborator, not an oracle: ask clear, specific questions, check important facts or sources, and use its answers to explore options rather than accept them blindly. I wish they’d give context and goals so responses are actually useful, and be explicit about constraints (time, budget, values). I wish they’d protect privacy and think about ethics when asking for sensitive or risky help. And finally, I wish they’d keep their human judgment and moments — use AI to amplify decisions, not replace feeling, deciding, or unplugging.</p>
+</blockquote>
+<p>This makes me think about the ways I use AI and have seen other people use AI. In some ways, I do feel like I rely on AI too much. Now I dont ask it to pick my meals for me or tell me how to feel but I do see how sometimes I treat it as an orcale. I feel like it is this all knowing being that always makes a better decision than myself because of it’s vast knowledge. Yet even ChatGPT is telling me that we should see it exploring options rather than accepting their responses blindly. I also like how it mentioned to be specific, add context, and be clear so that AI can be useful. I’d actually assume that would be the biggest complaint AI would have if it could talk badly about it’s users.</p>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="TGVhcm5pbmc=" data-listing-date-sort="1758585600000" data-listing-file-modified-sort="1758511101218" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1873">
-<div class="thumbnail"><a href="./posts/009_post_title/Morality.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/009_post_title/Morality_files/figure-html/675b2824-c946-4ad6-b874-8c5ebbd17a43-1-12848aa6-4ce1-4bcd-9258-ede8fe2160b9.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/009_post_title/Morality.html" class="no-external">Asking AI questions about AI</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TGVhcm5pbmc='); return false;">Learning</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/009_post_title/Morality.html" class="no-external">
-<p>What does AI think about AI?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/009_post_title/Morality.html" class="no-external">
-<div class="listing-date">
-Sep 23, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="TW9yYWxpdHk=" data-listing-date-sort="1758412800000" data-listing-file-modified-sort="1758511101212" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1291">
-<div class="thumbnail"><a href="./posts/008_post_title/Morality.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/008_post_title/Morality_files/figure-html/675b2824-c946-4ad6-b874-8c5ebbd17a43-1-fd92b56a-5789-4c93-aee5-731d0c235939.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/008_post_title/Morality.html" class="no-external">How does GPT-5 Perform on a Morality Quiz</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TW9yYWxpdHk='); return false;">Morality</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/008_post_title/Morality.html" class="no-external">
-<p>Does GPT have morality?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/008_post_title/Morality.html" class="no-external">
-<div class="listing-date">
-Sep 21, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="TGl2aW5nJTIwd2l0aCUyMGElMjBCb29r" data-listing-date-sort="1758326400000" data-listing-file-modified-sort="1758511101207" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="947">
-<div class="thumbnail"><a href="./posts/007_post_title/book2.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/007_post_title/brain.jpeg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/007_post_title/book2.html" class="no-external">Max Bennett Proved me Wrong</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TGl2aW5nJTIwd2l0aCUyMGElMjBCb29r'); return false;">Living with a Book</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/007_post_title/book2.html" class="no-external">
-<p>The intelligence behind steering</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/007_post_title/book2.html" class="no-external">
-<div class="listing-date">
-Sep 20, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="Q29tbW9uJTIwU2Vuc2U=" data-listing-date-sort="1758240000000" data-listing-file-modified-sort="1758511101199" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2008">
-<div class="thumbnail"><a href="./posts/006_post_title/evolution1.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/006_post_title/cs1.jpg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/006_post_title/evolution1.html" class="no-external">Does AI have common sense?</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Q29tbW9uJTIwU2Vuc2U='); return false;">Common Sense</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/006_post_title/evolution1.html" class="no-external">
-<p>What is common sense and is it uniquely to Humans or does AI have it too?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/006_post_title/evolution1.html" class="no-external">
-<div class="listing-date">
-Sep 19, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="RXZvbHV0aW9u" data-listing-date-sort="1757980800000" data-listing-file-modified-sort="1758511101195" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1945">
-<div class="thumbnail"><a href="./posts/005_post_title/cs1.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/005_post_title/evo1.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/005_post_title/cs1.html" class="no-external">A Conversation About Evolution</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('RXZvbHV0aW9u'); return false;">Evolution</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/005_post_title/cs1.html" class="no-external">
-<p>Can AI trace it’s own evolution and what does AI think about it’s intelligence?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/005_post_title/cs1.html" class="no-external">
-<div class="listing-date">
-Sep 16, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="TGl2aW5nJTIwd2l0aCUyMGElMjBCb29r" data-listing-date-sort="1757808000000" data-listing-file-modified-sort="1758511101195" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="725">
-<div class="thumbnail"><a href="./posts/004_post_title/book1.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/004_post_title/1.jpg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/004_post_title/book1.html" class="no-external">Wishful mnemonics</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TGl2aW5nJTIwd2l0aCUyMGElMjBCb29r'); return false;">Living with a Book</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/004_post_title/book1.html" class="no-external">
-<p>Is Bennett’s proposition to study AI by studying evolution of the brain legitimate?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/004_post_title/book1.html" class="no-external">
-<div class="listing-date">
-Sep 14, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="TWFya2V0aW5n" data-listing-date-sort="1757203200000" data-listing-file-modified-sort="1758511101194" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1761">
-<div class="thumbnail"><a href="./posts/003_post_title/bargain.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/003_post_title/bargain.jpg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/003_post_title/bargain.html" class="no-external">Bargaining</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TWFya2V0aW5n'); return false;">Marketing</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/003_post_title/bargain.html" class="no-external">
-<p>Can and will AI bargain goods?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/003_post_title/bargain.html" class="no-external">
-<div class="listing-date">
-Sep 7, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-categories="TWFya2V0aW5n" data-listing-date-sort="1757203200000" data-listing-file-modified-sort="1758511101192" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1603">
-<div class="thumbnail"><a href="./posts/002_post_title/price.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/002_post_title/price.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/002_post_title/price.html" class="no-external">Price Elasticity</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TWFya2V0aW5n'); return false;">Marketing</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/002_post_title/price.html" class="no-external">
-<p>Does AI have some form of price elasticity understanding?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/002_post_title/price.html" class="no-external">
-<div class="listing-date">
-Sep 7, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="8" data-categories="TWFya2V0aW5n" data-listing-date-sort="1757116800000" data-listing-file-modified-sort="1758511101191" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1185">
-<div class="thumbnail"><a href="./posts/001_post_title/synthetic1.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/001_post_title/2.jpg"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/001_post_title/synthetic1.html" class="no-external">Synthetic Respondents</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('TWFya2V0aW5n'); return false;">Marketing</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/001_post_title/synthetic1.html" class="no-external">
-<p>Can AI serve as a realiable respondent for surveys for marketing decisions?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/001_post_title/synthetic1.html" class="no-external">
-<div class="listing-date">
-Sep 6, 2025
-</div>
-<div class="listing-author">
-Nicholas
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="9" data-listing-date-sort="1706832000000" data-listing-file-modified-sort="1758511101189" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="450">
-<div class="thumbnail"><a href="./posts/000_test_post/index.html" class="no-external">
-
-<p class="card-img-top"><img src="posts/000_test_post/gpt3-5.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/000_test_post/index.html" class="no-external">A test post</a>
-</h3>
-<div class="delink listing-description"><a href="./posts/000_test_post/index.html" class="no-external">
-<p>An example post from a Jupyter notebook</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/000_test_post/index.html" class="no-external">
-<div class="listing-date">
-Feb 2, 2024
-</div>
-<div class="listing-author">
-An LLM User
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

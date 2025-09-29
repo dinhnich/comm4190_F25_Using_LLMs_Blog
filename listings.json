@@ -2,14 +2,15 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/010_post_title/Credit.html",
       "/posts/009_post_title/Morality.html",
       "/posts/008_post_title/Morality.html",
       "/posts/007_post_title/book2.html",
       "/posts/006_post_title/evolution1.html",
       "/posts/005_post_title/cs1.html",
       "/posts/004_post_title/book1.html",
-      "/posts/003_post_title/bargain.html",
       "/posts/002_post_title/price.html",
+      "/posts/003_post_title/bargain.html",
       "/posts/001_post_title/synthetic1.html",
       "/posts/000_test_post/index.html"
     ]

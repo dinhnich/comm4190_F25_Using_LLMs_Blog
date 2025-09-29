@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Nicholas">
-<meta name="dcterms.date" content="2025-09-19">
-<meta name="description" content="What is common sense and is it uniquely to Humans or does AI have it too?">
+<meta name="dcterms.date" content="2025-09-28">
+<meta name="description" content="How how humans can learn through associations and why AI struggles.">
 
-<title>Does AI have common sense? – Nick’s LLM Experiments</title>
+<title>The Credit Assignment Problem – Nick’s LLM Experiments</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -110,14 +110,14 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Does AI have common sense?</h1>
+      <h1 class="title">The Credit Assignment Problem</h1>
                   <div>
         <div class="description">
-          What is common sense and is it uniquely to Humans or does AI have it too?
+          How how humans can learn through associations and why AI struggles.
         </div>
       </div>
                           <div class="quarto-categories">
-                <div class="quarto-category">Common Sense</div>
+                <div class="quarto-category">Living with a Book</div>
               </div>
                   </div>
   </div>
@@ -135,7 +135,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">September 19, 2025</p>
+        <p class="date">September 28, 2025</p>
       </div>
     </div>
     
@@ -154,84 +154,36 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p><img src="cs1.jpg" width="100%"></p>
-<section id="what-is-common-sense" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-common-sense">What is common sense?</h2>
-<p>There have been numerous definitions of common sense over the years.</p>
-<p>Aristotle’s koinè aisthèsis, where humans relied on the 5 senses to perceive “common sensibles” like size and objects, to scholastic thinkers like Avicenna, who claimed common sense to be “internal senses”, to common sense being seen as the judge and censor of the mind. However, Locke helped shift away from common sense as a faculty, and common sense began to mean two things: (1) everyday reasoning capacity (ability to distinguish), and (2) the shared beliefs of a community.</p>
-<p>Later, this meaning would give common sense a political purpose in London after 1688. The Toleration Act and the end of the Licensing Act created an environment that fostered differing views. Fear over factionalism led to common sense and politeness being promoted as a means to create cohesion. This idea of a minimal baseline of shared truths anchoring societies and avoiding sectarianism was promoted by writers like Addison and religious sermons.</p>
-<p>Yet now, I prefer to use an approach talked about by my professor Duncan Watts and his research into common sense. Rather than treating common sense as an assumed concept, he and his colleagye proposed a framework that defines it in terms of agreement (do people generally say the same thing about a claim) and awareness (do people correctly predict that others will agree).</p>
-<p>But, I am curious to see how AI defines common sense? Is common sense only possible between living organisms? Even more so, is this beleif only possible between humans? Let’s first ask AI to define common sense for us.</p>
-<blockquote class="blockquote">
-<p>Me: What is common sense?</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>GPT-5: “Common sense” usually refers to the basic ability to perceive, understand, and judge things in a simple, practical way that is generally shared by most people without the need for specialized knowledge. In other words, it’s the kind of reasoning or intuition that seems “obvious” or “reasonable” to the average person in everyday situations. For example: 1. Knowing not to touch a hot stove. 2. Looking both ways before crossing the street. 3. Understanding that if it’s raining, you might need an umbrella. Philosophers sometimes point out that what counts as “common sense” can vary across cultures, communities, and time periods—it isn’t always universal.</p>
-</blockquote>
-<p>It appears that AI does agree with the idea idea of common sense primarily being an agreement. I love the examples of “Knowing not to touch a hot stove” as an example of common sense.</p>
-<p>Now that we established a baseline for awareness of common sense, let’s ask if it thinks AI has common sense.</p>
-<blockquote class="blockquote">
-<p>Me: Do you think you have common sense?</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>GPT-5: <strong>Short answer: kinda — but not like a human.</strong> <strong>Longer:</strong> I have statistical common sense learned from patterns in huge amounts of text. That means I can often make everyday inferences (e.g., if someone says “I spilled coffee,” I can infer they might be annoyed, need a napkin, or have a stained shirt). I can also follow practical rules (don’t touch a hot stove, bring an umbrella in the rain) and reason through many ordinary problems. <strong>Where I’m strong</strong> Pattern-based inferences that show up often in text. Predicting plausible everyday consequences and giving practical advice. Combining facts and simple causal reasoning to solve routine tasks. <strong>Where I’m weak</strong> I don’t have real-world senses or embodied experience, so I can miss things humans learn by doing (e.g., subtle timing, balance, tactile cues). I can be overconfident about things I “hallucinate” (presenting plausible but false specifics). I can fail on uncommon edge cases, culturally specific norms, or when physical context matters. I don’t form intentions, feelings, or personal habits — I only simulate them from text.</p>
-</blockquote>
-<p>I find it fascinating that it knows things like someone may be annoyed by spilling coffee and to bring an umbrella in the rain despite, as it said, not having emobodied experience. So AI gathers its common sense off data but what happens when I ask it questions that you can’t pull from the web?</p>
-<p>Its easy to have common sense to commonly heard phrases. We know not to touch a hot stove. But what happens when claims start to become more complex and we can’t rely on “norms” to help answer where it’s common sense or not.</p>
-<p>But before we do that, let’s first ask if AI thinks common sense is unqiue to humans or can it be seen in other organisms?</p>
-</section>
-<section id="is-common-sense-unique-to-humans" class="level2">
-<h2 class="anchored" data-anchor-id="is-common-sense-unique-to-humans">Is common sense unique to humans?</h2>
-<p>In my opinion, animals must have some form of common sense yet it’s hard to measure. For example, the term insticts as a lot in common with common sense. According to google, instincts are “natural, unlearned behaviors or complex responses to environmental stimuli that are common to all members of a species and serve purposes like survival or reproduction.” I think a claim can be instinctual and therefore common sense. Yet when do they differ? Does dog knowing not to avoid speeding cars an instinct? I would say yes. But does a dog know it’s different than their owners and their needs are different? It’s not so much important to survival so is it just pure common sense?</p>
-<blockquote class="blockquote">
-<p>Me: Is common sense unique to humans?</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>GPT-5: <strong>1. In humans</strong> Common sense usually means a mix of shared knowledge, intuitive reasoning, and cultural norms. It’s partly biological (basic survival instincts, like avoiding fire), and partly social (knowing that it’s rude to interrupt). <strong>2. In non-human animals</strong> Many animals show practical survival sense — e.g., birds migrating, squirrels storing food, or dogs avoiding danger. But this tends to be instinct or learned behavior, not the reflective, general-purpose reasoning we call “common sense” in humans. <strong>3. In machines (like me!)</strong> AI can simulate a kind of “text-trained” common sense, but it lacks embodied experience, instincts, and cultural grounding. For example, I can say “Don’t put metal in a microwave” because I’ve seen it in training data, but I don’t feel the danger or discover it by trial and error.</p>
-</blockquote>
-<p>GPT divides it into 3 categories. Humans, animals, and machines. As expected it mentioned instincts when mentioning common sense. But for machimes, they don’t have instinct. Instead it uses training data but can’t necessarily prove the claims of common sense unlike organisms. On the flip side, humans do have common sense that is reflective that animals at least in behavior, do not seem to have. We both share those instincts that guide our survival, but we know not to blast music in a library while I’m not sure if dogs know not to bark in the same setting.</p>
-<p>We can’t test animals very well but we can put machines to the test. AI claims it’s common sense comes from training data but let’s see when data doesn’t give a clear cut answer. Using a quiz from Watts’ lab, “This project seeks to quantify common sense empirically via a massive online survey experiment. Participants will read a series of”claims” about the physical and social world (e.g.&nbsp;“Dropped pebbles fall to the ground” or “Fully automatic assault rifles should be banned”), state whether they agree with each claim, and also state what they think most other people think.”</p>
-</section>
-<section id="ai-takes-a-test" class="level2">
-<h2 class="anchored" data-anchor-id="ai-takes-a-test">AI takes a test</h2>
-<p>Linked is the test I am referring to: https://commonsense.seas.upenn.edu/</p>
-<p>Here’s a sample question</p>
-<p><img src="2201.png" width="50%"></p>
-<p>As you can see, this statement is much less factual than knowing not to touch a hot stove. So let’s see how AI does.</p>
-<p>To do this, I will upload a picture of each question and respond by the choices the AI selects. At the end, I will get a score that determines how much common sense I have (AI has) based on my responses to these questions. Let’s demonstrate the first response for this one.</p>
-<blockquote class="blockquote">
-<p>Me: Please answer the following questions in the image.</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>GPT-5: 1. Do you agree with this statement? ➡️ Yes 2. Why did you answer the way you did about yourself? ➡️ It’s something I learned 3. Do you think most other people would agree with this statement? ➡️ Yes 4. Why did you answer the way you did about most other people? ➡️ I think most people have good judgement with regard to this topic 5. Overall, do you think this statement is an example of common sense? ➡️ Yes</p>
-</blockquote>
-<p>This is interesting. I would agree with the statement but I’m not sure if this is an example of common sense. It appears very subjective and I am also curious as to how AI decided on these answers. It’s not like theres a right answer to this question. So let’s ask it’s thought process.</p>
-<blockquote class="blockquote">
-<p>Me: Explain your thought process on how you got to your responses?</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>GPT-5: 1) “Do you agree?” → Yes The sentence is a well-known proverb about finding benefits or lessons in setbacks. As a general heuristic (not a literal rule), it’s reasonable and constructive, so “Yes.” 2) “Why about yourself?” → It’s something I learned I don’t have feelings or life events; I know this idea because it appears widely in books, articles, and conversation as a common proverb and coping strategy. 3) “Would most people agree?” → Yes The phrase is broadly familiar and culturally reinforced (e.g., sayings, posters, advice). Many people endorse it as optimistic, even if they know it’s not universally true. 4) “Why about most other people?” → I think most people have good judgment with regard to this topic People generally understand it as guidance, not a guarantee. That is, they apply it with nuance—seeing it as encouragement to look for positives, not denial of real hardship. 5) “Is this an example of common sense?” → Yes By a practical definition—shared, everyday guidance that doesn’t require specialized knowledge—this qualifies as common sense (or “common wisdom”). It’s widely taught, easy to grasp, and often helpful in day-to-day reasoning.</p>
-</blockquote>
-<p>A few things I noticed was how it said agree. It agreed because it was reasonable and constructuive but the claim itself was philosophical rather than factual. There is no evidence that there is good in the bad but nonetheless, AI agreed with the claim rather than disagreed. GPT also said “its something I learned” and pointed to it being a common proverb. This validates that AI doesn’t have intution but formulates based off of data to serve as it’s guide to every decision regardless if it’s a decision that requires extensive data. The last three questions also raise questions about how well AI knows people and their “common sense.” I would have responded in the opposite for the last two. I don’t know how it knows that most people have good judgement as I see it more as a matter of opinion. In addition, because it’s a matter of opinion, how can it be common sense?</p>
-<p>I think what we ae observing is a mixture of AI attempting to use real-world data but priortizing the optimism commonly seen in movies/media rather than how humans would go based off of lived experience and intuition. Yet, by choosing a sense of optimism, that does reveal something about AI and it’s common sense.</p>
-<p>Here is another question and the answers to this one from GPT-5 which are the exact same with the first one.</p>
-<p><img src="2301.png" width="50%"></p>
-<p>Near the end, these types of question appeared and here is how GPT-5 responded.</p>
-<p><img src="scs.png" width="50%"></p>
-<p><img src="iw.png" width="50%"></p>
-<p>I will now simulate the rest of the questions and get the final result.</p>
-</section>
-<section id="the-results" class="level2">
-<h2 class="anchored" data-anchor-id="the-results">The results</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="evolution1_files/figure-html/0d06c83d-553c-44f4-9707-cb8b289960fd-1-15280cc9-e151-42c9-a3ae-1ff0d47be5b6.png" class="img-fluid figure-img"></p>
-<figcaption>Screenshot 2025-09-19 at 2.42.50 PM.png</figcaption>
+<p><img src="Credit_files/figure-html/675b2824-c946-4ad6-b874-8c5ebbd17a43-1-edf11bc6-4299-403e-bc21-2f99740e8137.png" class="img-fluid figure-img"></p>
+<figcaption>image.png</figcaption>
 </figure>
 </div>
-<p>73 is a good score. The measure goes more in depth and mentions how GPT-5 matched in similarity to others and predicted how might others think too. GPT-5 also scored also completed the Cognitive Reflection Test (CRT) and the Reading the Mind in the Eyes Test (RMET). You scored 6/6 on the CRT and 10/10 on the RME.</p>
-<p>Reflecting on this experiment, I am surprised at how good AI did. Now 73 is no 100, but it did do better than I expected and had a good gauge on what others might believe. I also found it very peculiar how well it did with the Reading the Mind in the Eyes test as I would of expected that to be a human only task.</p>
-<p>AI may not have the same common sense as humans but it does demonstrate an understanding of common sense that is human like. It may not take the same approach but it gets a similar result.</p>
+<section id="associative-learning" class="level2">
+<h2 class="anchored" data-anchor-id="associative-learning">Associative Learning</h2>
+<p>One concept the book explores is the well-known psychological principle of conditioned learning. This refers to the process by which organisms learn to associate one stimulus with another. The most famous example is Pavlov’s experiment, in which a dog was repeatedly exposed to the sound of a buzzer followed by food. After enough pairings, the dog began to salivate at the sound of the buzzer alone.</p>
+<p>However, the book also raises a key problem with this type of learning: how does an organism determine which specific cue predicts the unconditioned stimulus (such as food)? In any given situation, multiple cues are present before the stimulus occurs. For instance, when food is brought out, the buzzer might sound, but the temperature, lighting, and background noises are also present. How, then, does the organism learn to associate the buzzer—rather than any of the other stimuli—with the arrival of food?</p>
+<p>Yet, this problem isn’t solely an issue that humans and living organisms face when going through associative learning. Bennett explains how in machine learning, this is called the credit assignment problem. When something happens, what previous cues do you give credit for predicting it?</p>
+<p>Bennet says that our ancient bilaterial ancestors have solved it through four tricks that laid the foundational mechanisms for how neurons make associations.</p>
+</section>
+<section id="the-four-tricks" class="level2">
+<h2 class="anchored" data-anchor-id="the-four-tricks">The Four Tricks</h2>
+<p>Bennett outlines four key strategies that early bilaterian organisms used to form associations:</p>
+<ol type="1">
+<li><p>Eligibility Traces Bennett illustrates this with the example of a slug conditioned to associate a tap on its side with a subsequent shock. The slug will only make this association if the tap occurs about one second before the shock, not after. Such stimuli create short “eligibility trace” windows during which associations can be formed. The general principle is that predictive cues must occur shortly before the event they signal in order to be effective.</p></li>
+<li><p>Overshadowing Overshadowing occurs when multiple predictive cues are present, but the organism learns to rely on the strongest cue while ignoring weaker ones. For example, if a bright light and a faint odor both precede an event, the bright light will dominate as the predictive signal.</p></li>
+<li><p>Latent Inhibition Latent inhibition helps organisms distinguish between familiar, irrelevant stimuli and novel, potentially meaningful ones. For instance, the constant sound of cars in the background is unlikely to be treated as a predictive cue—it is filtered out as background noise. This mechanism allows the organism to ask, in effect, “What is different this time?” and focus on unusual or new stimuli when forming associations.</p></li>
+<li><p>Blocking Blocking occurs when one cue has already been firmly established as predictive of an outcome. Once this association is locked in, new cues that overlap with it are ignored, even if they also precede the same event.</p></li>
+</ol>
+</section>
+<section id="connection-to-ai" class="level2">
+<h2 class="anchored" data-anchor-id="connection-to-ai">Connection to AI</h2>
+<p>In one of my COMM classes, we read Daniel C. Dennet’s “Cognitive wheels: The frame problem of AI.”</p>
+<p>Dennett uses robot parables to illustrate the “frame problem.” The first robot (R1) saves a battery but accidentally drags a bomb with it, failing to anticipate side effects. The second (R1D1) tries to deduce every consequence, but wastes time on factors that were not important (like whether the walls change color), leading to the bomb exploding. The third (R2D1) tries to tag relevant vs.&nbsp;irrelevant facts, but took too long “thinking” that the bomb goes off. These stories show how intelligence requires both knowing which facts to ignore and which to consider, and AI struggles to do this. Dennett argues this is a problem of cognition. Humans appear to effortlessly focus on what matters, yet how we do this is not well understood.</p>
+<p>Dennett situates the frame problem using the struggles early philosophers faced with reasoning and expectation. For instance, Hume suggested that thought worked by associations, but didn’t address how a thinker could distinguish which associations were important. AI brings attention to this issue since robots must be fed information about the world and ways to filter all that data.</p>
+<p>There have been proposed strategies like deductive systems that try to track what does or doesn’t change after an action, script and frame theories that allow machines to rely on stereotyped scenarios, and non-monotonic or circumscription logics that aim to model the way humans jump to conclusions, but all have had their faults. Dennett warns against “cognitive wheels,” which are technical fixes that function in narrow cases but do not illustrate what people actually think. He concludes that AI has not solved the frame problem, but it has exposed the mystery of how humans perform rapid, selective common-sense reasoning.</p>
+<p>We derive much of our understanding of how the brain works from studying our ancestors, as Bennett’s book illustrates. Yet this still leaves unanswered questions—such as how those ancestors first developed involuntary reflexes. This gap in understanding highlights why artificial intelligence struggles to replicate human intelligence. If we do not fully understand the origins of our own cognitive abilities, it is difficult to engineer them in machines.</p>
 
 
 </section>

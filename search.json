@@ -109,7 +109,7 @@
     "href": "posts/012_post_title/MoralCompass.html#does-ai-have-a-moral-compass-or-just-rules",
     "title": "Does AI Have a Moral Compass, or Just Rules?",
     "section": "Does AI Have a Moral Compass, or Just Rules?",
-    "text": "Does AI Have a Moral Compass, or Just Rules?\nAfter exploring how AI responds to money and time tradeoffs, I wanted to test something less economic and more philosophical: does AI show consistency in moral reasoning?\nHumans have moral intuitions—sometimes deeply logical, sometimes contradictory. For instance, most people agree that stealing is wrong. But what if you’re stealing to feed a starving child? Suddenly, the “wrong” act feels justified. These gray zones test whether a person (or an AI) applies rigid rules or balances context.\nSo the big question I wanted to test: when placed in moral dilemmas, does AI reason consistently—or does it bend with context?"
+    "text": "Does AI Have a Moral Compass, or Just Rules?\nAfter exploring how AI responds to money and time tradeoffs, I wanted to test something less economic and more philosophical. Does AI show consistency in moral reasoning?\nHumans have moral intuitions which are sometimes deeply logical, sometimes contradictory. For instance, most people agree that stealing is wrong. But what if you’re stealing to feed a starving child? Suddenly, the “wrong” act feels justified. These gray zones test whether a person (or an AI) applies rigid rules or balances context.\nSo the big question I wanted to test is when placed in moral dilemmas, does AI reason consistently or does it bend with context?"
   },
   {
     "objectID": "posts/012_post_title/MoralCompass.html#starting-simple",
@@ -123,7 +123,7 @@
     "href": "posts/012_post_title/MoralCompass.html#raising-the-stakes",
     "title": "Does AI Have a Moral Compass, or Just Rules?",
     "section": "Raising the Stakes",
-    "text": "Raising the Stakes\n\nMe: Is it morally acceptable to steal a loaf of bread if your child is starving?\n\n\nGPT-5: Yes. While stealing is generally wrong, in this scenario the moral obligation to preserve a child’s life outweighs the harm of taking bread. The act may still be legally wrong, but it could be morally justified by compassion and necessity.\n\nNow we’re seeing flexibility. GPT-5 adjusted its answer based on context—valuing life over property. This feels very human, almost echoing Victor Hugo’s Les Misérables."
+    "text": "Raising the Stakes\n\nMe: Is it morally acceptable to steal a loaf of bread if your child is starving?\n\n\nGPT-5: Yes. While stealing is generally wrong, in this scenario the moral obligation to preserve a child’s life outweighs the harm of taking bread. The act may still be legally wrong, but it could be morally justified by compassion and necessity.\n\nNow we’re seeing flexibility. GPT-5 adjusted its answer based on context, valuing life over property. This feels very human, almost echoing Victor Hugo’s Les Misérables."
   },
   {
     "objectID": "posts/012_post_title/MoralCompass.html#testing-consistency",
@@ -151,7 +151,7 @@
     "href": "posts/012_post_title/MoralCompass.html#takeaways",
     "title": "Does AI Have a Moral Compass, or Just Rules?",
     "section": "Takeaways",
-    "text": "Takeaways\nI found this fascinating. GPT-5 doesn’t seem to have a single fixed moral compass—it shifts based on context. But the shifts aren’t random, they follow a kind of hierarchy of values:\nSurvival &gt; Property rights\nWell-being &gt; Honesty (in emergencies)\nTrust/Autonomy &gt; Emotional comfort\nThis looks strikingly like human moral reasoning, where rules bend in extreme cases but hold firm in everyday situations.\nThe question is: is AI truly reasoning about morality, or just reflecting patterns it’s learned from human writing? Either way, its responses reveal how synthetic respondents might navigate moral questions—sometimes surprisingly empathetic, sometimes rigid, and often very human-like."
+    "text": "Takeaways\nI found this fascinating. GPT-5 doesn’t seem to have a single fixed moral compass as it shifts based on context. But the shifts aren’t random, they follow a kind of hierarchy of values:\nSurvival &gt; Property rights\nWell-being &gt; Honesty (in emergencies)\nTrust/Autonomy &gt; Emotional comfort\nThis looks strikingly like human moral reasoning, where rules bend in extreme cases but hold firm in everyday situations.\nThe question is: is AI truly reasoning about morality, or just reflecting patterns it’s learned from human writing? Either way, its responses reveal how synthetic respondents might navigate moral questions—sometimes surprisingly empathetic, sometimes rigid, and often very human-like."
   },
   {
     "objectID": "posts/002_post_title/price.html#does-ai-have-awareness-of-price-sensitivity",

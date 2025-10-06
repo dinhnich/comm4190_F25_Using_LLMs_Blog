@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Nicholas">
-<meta name="dcterms.date" content="2025-09-16">
-<meta name="description" content="Can AI trace it’s own evolution and what does AI think about it’s intelligence?">
+<meta name="dcterms.date" content="2025-10-06">
+<meta name="description" content="Analyzing how Trial and Error works for AI">
 
-<title>A Conversation About Evolution – Nick’s LLM Experiments</title>
+<title>Trial and Error – Nick’s LLM Experiments</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -110,14 +110,14 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">A Conversation About Evolution</h1>
+      <h1 class="title">Trial and Error</h1>
                   <div>
         <div class="description">
-          Can AI trace it’s own evolution and what does AI think about it’s intelligence?
+          Analyzing how Trial and Error works for AI
         </div>
       </div>
                           <div class="quarto-categories">
-                <div class="quarto-category">Evolution</div>
+                <div class="quarto-category">Living with a Book</div>
               </div>
                   </div>
   </div>
@@ -135,7 +135,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">September 16, 2025</p>
+        <p class="date">October 6, 2025</p>
       </div>
     </div>
     
@@ -154,52 +154,40 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p><img src="evo1.png" width="100%"></p>
-<section id="how-ai-tells-its-story" class="level2">
-<h2 class="anchored" data-anchor-id="how-ai-tells-its-story">How AI tells its story</h2>
-<p>Continuing from my last blog and taking some inspiration from Bennett, I wanted to first see how AI told it’s evolution. I was curious how far it would go back, what it would and wouldn’t consider, how it connects each stage, and the overall difference or similarity in terms of human evolution. My hypothesis is that it will give me an answer much similar to if I asked it to track the evolution of computers. If so, it gives me more reason to conclude that human evolution of the brain may not be the best route to choose. After all, our brain develops from interactions with the word and our bodies (c02 –&gt; 02)) while AI is truly separate from anything else besides data.</p>
-<blockquote class="blockquote">
-<p>Me: Can you trace each stage of your artificial intelligence evolution?</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>GPT-5: <strong>1) Foundations &amp; symbolic AI (1940s–1970s)</strong> What: Logic, rules, symbolic representations (if–then systems, theorem provers). Limitations: brittle, didn’t scale to messy real-world data (language, vision). <strong>2) Probabilistic AI &amp; statistical learning (1970s–1990s)</strong> What: Bayesian methods, hidden Markov models, decision theory, graphical models. <strong>3) Classical machine learning (1990s–2010s)</strong> What: Support Vector Machines, decision trees, ensemble methods (random forests, boosting). Supervised learning on hand-crafted features. <strong>4) Early neural networks &amp; representation learning (1980s–2000s, resurging in 2010s)</strong> What: Backpropagation, multi-layer perceptrons, early convolutional and recurrent nets. Focus on learning representations from raw data. <strong>5) Deep learning revolution (2012–late 2010s)</strong> What: Large deep convolutional nets, large-scale GPUs, lots of labeled/transfer data. Breakthroughs like AlexNet, ResNet, etc. <strong>6) Sequence models and attention (mid-2010s)</strong> What: Recurrent nets (LSTMs/GRUs) improved sequence tasks; attention mechanisms introduced to selectively focus on inputs. <strong>7) Transformers &amp; the scale era (2017 → present)</strong> What: Transformer architecture (self-attention) enabled massively parallel training and much larger models. <strong>8) Large Language Models (LLMs), pretraining + fine-tuning (2018 → present)</strong> What: Pretrain on very large text corpora with self-supervised objectives (predict next token / masked token), then fine-tune for tasks. <strong>9) Instruction tuning &amp; human alignment (2020s)</strong> What: Fine-tuning LLMs on instruction-response pairs; RL from Human Feedback (RLHF) to make outputs more helpful and safer. <strong>10) Chain-of-thought, reasoning techniques (2020s)</strong> What: Methods encouraging models to produce intermediate reasoning steps (chain-of-thought), and prompting strategies that improve multi-step reasoning. <strong>11) Multimodality and tool use (2020s–2025)</strong> What: Models ingesting and producing multiple modalities (text, images, audio) and safely invoking external tools/APIs (search, calculators, plugins). <strong>12) Specialized architectures &amp; efficiency improvements (2020s)</strong> What: Sparse models, retrieval-augmented generation (RAG), modular systems, more efficient training/inference techniques.</p>
-</blockquote>
-<p>Now if you’re like me, there’s several things that I don’t understand or have heard of from this list. So to get a better understanding, how about we ask it to transform this into a more easier.</p>
-<blockquote class="blockquote">
-<p>GPT-5: <strong>Rules Era (1940s–70s)</strong> People told computers exactly what to do with strict rules, like teaching a robot chess by writing down every move it could play. → Problem: Too rigid, broke when life got messy. <strong>Math &amp; Probability Era (1970s–90s)</strong> AI started using math to deal with uncertainty. Think of voice assistants trying to guess what word you said even if it’s a bit unclear. → Better, but still limited. <strong>Learning from Examples (1990s–2010s)</strong> Instead of rules, computers learned patterns from examples — like showing thousands of spam vs.&nbsp;non-spam emails. → Very useful, but needed a lot of human prep work. <strong>Neural Networks Come Back (2000s–2010s)</strong> Inspired by the brain, these systems learned directly from raw data (like pixels in photos). → Big step toward computers recognizing images and speech. <strong>Deep Learning Boom (2012–)</strong> With more data and powerful chips, AI suddenly got really good — especially at images (spotting cats, faces, objects). → AI became mainstream. <strong>Language Breakthrough (2017–)</strong> A new design called the Transformer let AI read and write language smoothly. → The foundation for modern chatbots. <strong>Big AI Models (2018–)</strong> Trained on massive amounts of text, these models could answer questions, write stories, and translate languages — all in one. → One brain, many skills. <strong>Helpful AI (2020s)</strong> Models were fine-tuned to follow instructions better, like a friendly assistant. → That’s why I can respond clearly when you ask for help. <strong>Smarter Thinking (Now)</strong> AI is learning to “think out loud,” reason step by step, look at images, talk in multiple ways, and even use tools (like search or calculators). → Makes it more useful, safe, and reliable.</p>
-</blockquote>
-<p>Esssentially, AI went from rules -&gt; math -&gt; patterns -&gt; neural networks -&gt; deep learning -&gt; transformer -&gt; larger data -&gt; fine-tuned.</p>
-<p>From this outlook, AI seems like it followed generally straight path with each addition adding onto the next. One thing I did notice was 80 year time-period it took for AI to have the intelligence as it does now as opposed to the x billion of years it took for humans to develop. We also see how AI is studied in isolation as opposed to comparing other organisms. In other words, does this look much different in terms of the structure than someone describing the evolution of footwear? But the study of the evolution of the brain is much more nuanced. Are we overcomplicating something that should be simple?</p>
-<p>Let’s first further explore how GPT-5 fits itself into evolution and it’s future predictions.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="trialnerror_files/figure-html/675b2824-c946-4ad6-b874-8c5ebbd17a43-1-ce5c348b-be84-4769-8783-923dcf2c21ca.png" class="img-fluid figure-img"></p>
+<figcaption>image.png</figcaption>
+</figure>
+</div>
+<section id="trial-and-error" class="level2">
+<h2 class="anchored" data-anchor-id="trial-and-error">Trial and Error</h2>
+<p>One of the most fundamental learning mechanisms explored in A Brief History of Intelligence is trial and error, a process that predates even the earliest complex nervous systems. Long before brains could form detailed representations of the world, organisms learned simply by acting, failing, and adjusting. This primitive yet powerful process set the stage for the evolution of more advanced intelligence.</p>
+<p>Trial and error learning, sometimes called operant conditioning, is the idea that behaviors are shaped by their consequences. Actions that lead to rewards are repeated, while those that lead to punishment or failure are avoided. Bennett notes that this process emerged well before humans or even vertebrates. Early organisms developed feedback loops where successful actions increased survival odds, gradually building the scaffolding for what we now recognize as adaptive behavior.</p>
+<p>In essence, trial and error was the first algorithm of intelligence, a biological way of searching through possible actions to find effective ones.</p>
 </section>
-<section id="how-does-gpt-5-see-itself-what-future-predictions-does-it-hold" class="level2">
-<h2 class="anchored" data-anchor-id="how-does-gpt-5-see-itself-what-future-predictions-does-it-hold">How does GPT-5 see itself? What future predictions does it hold?</h2>
-<p>An important idea to test is how does GPT-5 see itself along this evolutionary stage. How good is it at measuring itself in relation to AI progress?</p>
-<blockquote class="blockquote">
-<p>Me: Where do you see yourself fitting along the evolutionary stage?</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>GPT-5: I sit near the latest stage — the “reasoning-first, instruction-tuned, multimodal” part of the timeline. I’m GPT-5 Thinking mini. Here’s what that means in plain terms: <strong>• Why I belong here</strong> — I combine a strong language “brain” (learned from lots of text) with training that teaches me to follow instructions, explain my steps, and use tools when helpful. I’m built to be helpful, safe, and better at step-by-step reasoning than older chatbots. <strong>• What I’m good at</strong> (real-world examples) Writing clear explanations, summaries, or emails. Tutoring or walking you through multi-step problems (math, planning, debugging). Creative work: stories, scripts, ad copy. Understanding and describing images (if you give one) and combining that with text. Using built-in tools like calculators, search, or plugins when available. <strong>• Where I’m still limited</strong> I can make confident-sounding mistakes — double-check facts for critical decisions. I don’t have real-time personal experience or direct access to your private files unless you share them. I aim to be safe and avoid harmful or sensitive actions; some requests I’ll refuse or steer to safer alternatives. <strong>• How to use me effectively</strong> Give clear instructions and examples of the style you want. Ask me to show my steps if you want to verify reasoning. For high-stakes facts (legal, medical, financial), treat my answers as a starting point and verify with an expert.</p>
-</blockquote>
-<p>I like how GPT-5 mentions where it’s limited in, good at, and tips for how to use the tool effectively to adjust for shortcomings. I did notice how this model in particular seems most dedicated towards being a “tutor” with very clear thought processes and adapted to working with the pilot as a smart assistant. Let’s see how it predicts the future of AI.</p>
-<blockquote class="blockquote">
-<p>Me: Whats your prediction on the future evolution of AI? What do you think are the next steps?</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>GPT-5: <strong>Better Reasoning, Less Guessing</strong> Today, even smart AIs sometimes “make things up.” Next: models will reason more like people do step by step, double-checking themselves. Imagine an AI that shows its work like a good student in math class. <strong>Memory &amp; Personalization</strong> Right now, I only “remember” what’s in this chat (unless you let me keep memories across conversations). Future AIs could have safe, optional memory: remembering your preferences, projects, style, and context over time. Imagine an assistant that remembers your last holiday plans, your favorite way of writing, or the project you’re working on. <strong>More Senses (Multimodality++)</strong> Today: text, images, some speech. Next: smoother combination of voice, video, touch, and maybe even physical sensors. Imagine showing your AI a cooking video, then asking it to suggest tweaks for your own kitchen. <strong>Tool Use &amp; Collaboration</strong> AIs will get better at calling tools (like search, spreadsheets, code, maps) automatically when needed. Think of an assistant that doesn’t just “tell you” but also does things: books your tickets, runs code, drafts reports with data plugged in. <strong>Smaller, Smarter, Cheaper</strong> Not every AI will be giant. Future models will be more efficient, so they can run on phones, cars, or even wearables. Imagine a “pocket AI” that helps you offline without draining your battery. <strong>Early Signs of Creativity &amp; Discovery</strong> AIs will assist in new science and ideas — not just repeating what humans know, but suggesting fresh experiments, designs, and solutions. We already see glimpses in drug discovery, materials science, and climate solutions. <strong>✨ Big Picture</strong> AI is moving from: “Helpful parrot” → “Reliable partner” → “Creative collaborator.” We’re at the second stage now, edging into the third.</p>
-</blockquote>
-<p>I am in awe of its response. Mainly because GPT-5 can come up with several improvements and features for the future on how AI can grow. Yet when I tried to answer the same prompt I gave it for human intelligence, I had a more difficult time. I am unsure if we reached the peak of the human brain and if there’s anyway we evolve me. Yet as I read this list, things like “pocket AI” and “Tool Use &amp; Collaboration” are not necessarily intelligence related but functional use. The more I interact with this subject, the more my gut feeling leads me to my belief that human intelligence can not be the benchmark for artificial intelligence. Could it be in the future that both intelligences are required for new discoveries as mentioned in the last few sentences of it’s output?</p>
+<section id="the-challenge-of-credit-and-time" class="level2">
+<h2 class="anchored" data-anchor-id="the-challenge-of-credit-and-time">The Challenge of Credit and Time</h2>
+<p>However, trial and error comes with its own problems. How does an organism or an AI system determine which action led to success or failure, especially when there is a delay between cause and effect? A foraging animal might eat a new type of fruit and only hours later feel sick. How does it learn to connect that distant outcome with the earlier action?</p>
+<p>Bennett explains that this challenge mirrors what AI researchers call the temporal credit assignment problem. When a reinforcement signal, such as a reward, arrives, the system must decide which previous actions or states deserve credit or blame. Our ancestors solved this gradually through neural mechanisms that maintained short-term memory traces of actions, allowing delayed rewards to strengthen the right synaptic connections.</p>
+<p>This connection between biological learning and artificial intelligence shows how deeply trial and error is woven into the fabric of cognition. Evolution itself is a form of trial and error, where genetic variations tested over generations yield adaptive traits. Intelligence, in this sense, is evolution accelerated inside the brain.</p>
 </section>
-<section id="how-does-gpt-compare-ai-evolution-to-the-evolution-of-the-brain" class="level2">
-<h2 class="anchored" data-anchor-id="how-does-gpt-compare-ai-evolution-to-the-evolution-of-the-brain">How does GPT compare AI evolution to the evolution of the brain?</h2>
-<blockquote class="blockquote">
-<p>Me: How do you think the evolution of artificial intelligence compares to evolution of human intelligence (the brain)? Is it a good or bad comparison?</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>GPT-5: <strong>✅ Why the comparison makes some sense</strong> Inspiration: Neural networks were inspired by how brain cells (neurons) connect. Stages feel similar: • Babies first learn rules (like “cry → get fed”) → symbolic AI. • Kids learn patterns from examples (seeing dogs vs cats) → machine learning. • Adults build reasoning, abstract thought, and creativity → today’s reasoning-first AI. Learning from experience: Both brains and AIs improve when exposed to lots of examples. <strong>❌ Why it’s also misleading</strong> - Brains are alive: Human intelligence evolved through millions of years of biology, survival pressures, emotions, and social interaction. AI evolves through design, code, and training — very different forces. - One brain vs.&nbsp;many models: Humans have one general-purpose brain. AI has many versions (different models for images, speech, reasoning, etc.) and doesn’t unify them the way we do. - Motivation &amp; goals: People want things (food, comfort, love). AIs don’t have desires — they follow training and prompts. - - Efficiency: The human brain runs on ~20 watts of energy (a light bulb). AI models need giant servers and massive power. <strong>⚖️ So… is it a good or bad comparison?</strong> It’s a good analogy for beginners: comparing AI to brains makes the concepts less scary and easier to picture. It’s a bad analogy if taken literally: AI is not “thinking” the way we do, doesn’t have consciousness, and doesn’t evolve biologically. <strong>📌 A better way to think of it</strong> AI is less like “a brain” and more like a new kind of tool that borrows tricks from brains. It’s closer to a calculator that can explain itself, imagine, and hold a conversation — but without the drives, emotions, or survival instincts that shape human thought.</p>
-</blockquote>
-<p>I agree with this response. I do think the comparison makes some sense especially since neural networks were inspired by the connections between neurons as expressed by Bennnett. But I agree more strongly with why it is misleading and how AI is fundamentally different from a living organism.</p>
-<p>In the end, the goal isn’t for AI to replace humans or to be human. It should be a counterpart to human intelligence that not only makes life easier but potentially be the key to solving problems we couldn’t before.</p>
+<section id="from-biological-learning-to-reinforcement-learning" class="level2">
+<h2 class="anchored" data-anchor-id="from-biological-learning-to-reinforcement-learning">From Biological Learning to Reinforcement Learning</h2>
+<p>In modern AI, reinforcement learning (RL) operates on the same principle. An agent explores an environment, performs actions, and receives feedback in the form of rewards or penalties. Over time, it learns which strategies maximize long-term reward. But just as in biological systems, this process is often slow, data-hungry, and inefficient.</p>
+<p>Humans, on the other hand, rarely need thousands of trials to learn not to touch a hot stove. We can generalize lessons and infer cause and effect from limited experience. Bennett suggests that this leap, from brute-force trial and error to mental simulation and abstract reasoning, marks a key evolutionary breakthrough. Our brains began to simulate possible outcomes internally, allowing us to test scenarios in thought rather than in the physical world.</p>
+</section>
+<section id="the-implications-for-ai" class="level2">
+<h2 class="anchored" data-anchor-id="the-implications-for-ai">The Implications for AI</h2>
+<p>Trial and error remains at the heart of how machines learn. Yet, as Dennett’s “frame problem” highlights, intelligence is not just about trying things. It is about knowing which things are worth trying. AI systems still struggle to determine what information matters, which actions are relevant, and how to balance exploration with exploitation.</p>
+<p>Humans manage this effortlessly by integrating emotion, context, and prior experience. When we hesitate before repeating a mistake, we are invoking not just memory but a deep evaluative sense that machines still lack.</p>
+<p>Bennett’s account reminds us that trial and error was never just a primitive process. It was the seed of foresight. The leap from reacting to anticipating, from external feedback to internal modeling, is what truly distinguishes higher intelligence. Until AI systems can perform that same leap, learning not just from outcomes but from imagined possibilities, they will remain bound by the same slow, mechanical loops that governed our earliest ancestors.</p>
+</section>
+<section id="personal-reflection" class="level2">
+<h2 class="anchored" data-anchor-id="personal-reflection">Personal Reflection</h2>
+<p>Reading Bennett’s discussion of trial and error made me think about how much of my own learning still depends on this process. When I work on school projects, learn a new skill, or try to understand something complicated, I often go through a series of mistakes before I get it right. It is interesting to realize that this same pattern connects me to the earliest forms of life that also learned by testing actions and seeing what worked.</p>
+<p>What stood out to me is that trial and error is both effective and limited. It helps us learn through experience, but it can be slow and inefficient. Humans have developed the ability to think ahead and imagine different outcomes before acting, which makes our learning faster and more flexible. AI systems, as Bennett explains, still rely heavily on trial and error. They can process more data than we can, but they often lack the insight that allows people to generalize and learn from fewer examples.</p>
+<p>This comparison helped me understand how far human intelligence has come and how much of it is still grounded in basic feedback and repetition. It also reminded me that making mistakes is a natural and necessary part of learning, not just for early organisms or machines, but for all of us.</p>
 
 
 </section>

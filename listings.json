@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/017_post_title/curiosity.html",
       "/posts/016_post_title/jailbreak.html",
       "/posts/015_post_title/prompting.html",
       "/posts/013_post_title/trialnerror.html",

@@ -2,6 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/019_post_title/Mental.html",
+      "/posts/018_post_title/curiosity.html",
       "/posts/017_post_title/curiosity.html",
       "/posts/016_post_title/jailbreak.html",
       "/posts/015_post_title/prompting.html",

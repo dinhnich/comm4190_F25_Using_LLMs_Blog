@@ -2,94 +2,98 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://dinhnich.github.io/comm4190_F25_Using_LLMs_Blog/index.html</loc>
-    <lastmod>2025-10-20T04:26:02.339Z</lastmod>
+    <lastmod>2025-10-20T04:52:37.719Z</lastmod>
   </url>
   <url>
     <loc>https://dinhnich.github.io/comm4190_F25_Using_LLMs_Blog/posts/017_post_title/curiosity.html</loc>
-    <lastmod>2025-10-20T04:26:02.403Z</lastmod>
+    <lastmod>2025-10-20T04:52:37.789Z</lastmod>
   </url>
   <url>
     <loc>https://dinhnich.github.io/comm4190_F25_Using_LLMs_Blog/posts/020_post_title/Debate.html</loc>
-    <lastmod>2025-10-20T04:26:02.436Z</lastmod>
+    <lastmod>2025-10-20T04:52:37.824Z</lastmod>
   </url>
   <url>
     <loc>https://dinhnich.github.io/comm4190_F25_Using_LLMs_Blog/posts/021_post_title/Imagination.html</loc>
-    <lastmod>2025-10-20T04:26:02.503Z</lastmod>
+    <lastmod>2025-10-20T04:52:37.896Z</lastmod>
   </url>
   <url>
     <loc>https://dinhnich.github.io/comm4190_F25_Using_LLMs_Blog/posts/009_post_title/Morality.html</loc>
-    <lastmod>2025-10-20T04:26:02.368Z</lastmod>
+    <lastmod>2025-10-20T04:52:37.751Z</lastmod>
   </url>
   <url>
     <loc>https://dinhnich.github.io/comm4190_F25_Using_LLMs_Blog/posts/003_post_title/bargain.html</loc>
-    <lastmod>2025-10-20T04:26:02.344Z</lastmod>
+    <lastmod>2025-10-20T04:52:37.725Z</lastmod>
   </url>
   <url>
     <loc>https://dinhnich.github.io/comm4190_F25_Using_LLMs_Blog/posts/015_post_title/prompting.html</loc>
-    <lastmod>2025-10-20T04:26:02.392Z</lastmod>
+    <lastmod>2025-10-20T04:52:37.777Z</lastmod>
   </url>
   <url>
     <loc>https://dinhnich.github.io/comm4190_F25_Using_LLMs_Blog/posts/004_post_title/book1.html</loc>
-    <lastmod>2025-10-20T04:26:02.345Z</lastmod>
+    <lastmod>2025-10-20T04:52:37.726Z</lastmod>
   </url>
   <url>
-    <loc>https://dinhnich.github.io/comm4190_F25_Using_LLMs_Blog/posts/016_post_title/jailbreak.html</loc>
-    <lastmod>2025-10-20T04:26:02.392Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dinhnich.github.io/comm4190_F25_Using_LLMs_Blog/posts/012_post_title/MoralCompass.html</loc>
-    <lastmod>2025-10-20T04:26:02.390Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dinhnich.github.io/comm4190_F25_Using_LLMs_Blog/posts/005_post_title/cs1.html</loc>
-    <lastmod>2025-10-20T04:26:02.345Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dinhnich.github.io/comm4190_F25_Using_LLMs_Blog/about.html</loc>
-    <lastmod>2025-10-20T04:26:02.339Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dinhnich.github.io/comm4190_F25_Using_LLMs_Blog/posts/006_post_title/evolution1.html</loc>
-    <lastmod>2025-10-20T04:26:02.349Z</lastmod>
-  </url>
-  <url>
-    <loc>https://dinhnich.github.io/comm4190_F25_Using_LLMs_Blog/posts/013_post_title/trialnerror.html</loc>
-    <lastmod>2025-10-20T04:26:02.392Z</lastmod>
+    <loc>https://dinhnich.github.io/comm4190_F25_Using_LLMs_Blog/posts/023_post_title/Experiment4.html</loc>
+    <lastmod>2025-10-20T04:52:37.909Z</lastmod>
   </url>
   <url>
     <loc>https://dinhnich.github.io/comm4190_F25_Using_LLMs_Blog/posts/011_post_title/Time.html</loc>
-    <lastmod>2025-10-20T04:26:02.389Z</lastmod>
+    <lastmod>2025-10-20T04:52:37.774Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dinhnich.github.io/comm4190_F25_Using_LLMs_Blog/posts/013_post_title/trialnerror.html</loc>
+    <lastmod>2025-10-20T04:52:37.776Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dinhnich.github.io/comm4190_F25_Using_LLMs_Blog/posts/006_post_title/evolution1.html</loc>
+    <lastmod>2025-10-20T04:52:37.731Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dinhnich.github.io/comm4190_F25_Using_LLMs_Blog/about.html</loc>
+    <lastmod>2025-10-20T04:52:37.719Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dinhnich.github.io/comm4190_F25_Using_LLMs_Blog/posts/005_post_title/cs1.html</loc>
+    <lastmod>2025-10-20T04:52:37.726Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dinhnich.github.io/comm4190_F25_Using_LLMs_Blog/posts/012_post_title/MoralCompass.html</loc>
+    <lastmod>2025-10-20T04:52:37.775Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dinhnich.github.io/comm4190_F25_Using_LLMs_Blog/posts/016_post_title/jailbreak.html</loc>
+    <lastmod>2025-10-20T04:52:37.777Z</lastmod>
   </url>
   <url>
     <loc>https://dinhnich.github.io/comm4190_F25_Using_LLMs_Blog/posts/022_post_title-/Experiment3.html</loc>
-    <lastmod>2025-10-20T04:26:02.511Z</lastmod>
+    <lastmod>2025-10-20T04:52:37.905Z</lastmod>
   </url>
   <url>
     <loc>https://dinhnich.github.io/comm4190_F25_Using_LLMs_Blog/posts/018_post_title/curiosity.html</loc>
-    <lastmod>2025-10-20T04:26:02.414Z</lastmod>
+    <lastmod>2025-10-20T04:52:37.800Z</lastmod>
   </url>
   <url>
     <loc>https://dinhnich.github.io/comm4190_F25_Using_LLMs_Blog/posts/002_post_title/price.html</loc>
-    <lastmod>2025-10-20T04:26:02.342Z</lastmod>
+    <lastmod>2025-10-20T04:52:37.723Z</lastmod>
   </url>
   <url>
     <loc>https://dinhnich.github.io/comm4190_F25_Using_LLMs_Blog/posts/010_post_title/Credit.html</loc>
-    <lastmod>2025-10-20T04:26:02.369Z</lastmod>
+    <lastmod>2025-10-20T04:52:37.753Z</lastmod>
   </url>
   <url>
     <loc>https://dinhnich.github.io/comm4190_F25_Using_LLMs_Blog/posts/001_post_title/synthetic1.html</loc>
-    <lastmod>2025-10-20T04:26:02.341Z</lastmod>
+    <lastmod>2025-10-20T04:52:37.722Z</lastmod>
   </url>
   <url>
     <loc>https://dinhnich.github.io/comm4190_F25_Using_LLMs_Blog/posts/008_post_title/Morality.html</loc>
-    <lastmod>2025-10-20T04:26:02.362Z</lastmod>
+    <lastmod>2025-10-20T04:52:37.745Z</lastmod>
   </url>
   <url>
     <loc>https://dinhnich.github.io/comm4190_F25_Using_LLMs_Blog/posts/007_post_title/book2.html</loc>
-    <lastmod>2025-10-20T04:26:02.357Z</lastmod>
+    <lastmod>2025-10-20T04:52:37.739Z</lastmod>
   </url>
   <url>
     <loc>https://dinhnich.github.io/comm4190_F25_Using_LLMs_Blog/posts/019_post_title/Mental.html</loc>
-    <lastmod>2025-10-20T04:26:02.416Z</lastmod>
+    <lastmod>2025-10-20T04:52:37.802Z</lastmod>
   </url>
 </urlset>
